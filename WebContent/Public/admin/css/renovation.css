@@ -1,0 +1,151 @@
+.menu_box {
+	width: 80px;
+	height: 30px;
+	border: #09C 1px solid;
+	background: white;
+	color: #666666;
+	text-align: center;
+	line-height: 30px;
+	float: left;
+	overflow: hidden;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	border-radius: 2px;
+	cursor: pointer;
+	display: block;
+}
+
+.menu_box:hover {
+	background: #09C;
+	color: white;
+}
+
+.ui-c-renovation-phone {
+	float: left;
+	width: 306px;
+	height: auto;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	background: #fff;
+	padding: 10px;
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+
+.ui-c-renovation-phone-head {
+	height: 44px;
+	background: #fff;
+	position: relative;
+}
+
+.ui-c-renovation-phone-head:before {
+	content: "";
+	position: absolute;
+	top: 15px;
+	left: 112px;
+	height: 8px;
+	width: 8px;
+	background: #ddd;
+	border-radius: 8px;
+}
+
+.ui-c-renovation-phone-head:after {
+	content: "";
+	position: absolute;
+	top: 15px;
+	left: 128px;
+	height: 8px;
+	width: 50px;
+	background: #ddd;
+	border-radius: 8px;
+}
+
+.ui-c-renovation-phone-title {
+	height: 54px;
+	background: url(../images/wx-top.png) 0 0 no-repeat;
+	background-size: 100% auto;
+	padding: 0 50px;
+	font-size: 15px;
+	color: #fff;
+	text-align: center;
+	line-height: 68px;
+	cursor: default;
+	overflow: hidden;
+	display: block;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.ui-c-renovation-phone-foot {
+	height: 24px;
+	width: 60px;
+	margin: 15px auto 5px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+}
+
+.ui-c-renovation-phone-body {
+	min-height: 500px;
+	border: 1px solid #ddd;
+	border-top: 0;
+	background: rgb(243, 243, 243);
+	overflow: hidden;
+}
+
+#phone_body {
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	font-size: 1rem;
+}
+
+#renovation_menu_content {
+	position: fixed;
+	top: 40px;
+	left: 20px;
+	width: 200px;
+	font-size: 12px;
+}
+
+.ui-c-renovation-drag {
+	border: #0099CC 2px dashed;
+	cursor: move;
+}
+
+.renovation_copy_btn {
+	width: 70px;
+	height: 30px;
+	border-radius: 2px;
+	background-color: #0099CC;
+	color: white;
+	text-align: center;
+	line-height: 30px;
+	font-size: 14px;
+	cursor: pointer;
+	float: left;
+}
+
+.renovation_del_btn {
+	width: 70px;
+	height: 30px;
+	border-radius: 2px;
+	background-color: #FF0000;
+	color: white;
+	text-align: center;
+	line-height: 30px;
+	font-size: 14px;
+	cursor: pointer;
+	float: left;
+	margin-left: 15px;
+}
+
+.renovation_submit_btn {
+	width: 200px;
+	height: 50px;
+	background-color: orange;
+	text-align: center;
+	line-height: 50px;
+	border-radius: 2px;
+	color: white;
+	cursor: pointer;
+}

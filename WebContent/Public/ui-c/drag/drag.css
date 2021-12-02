@@ -1,0 +1,35 @@
+.ui-c-drag {
+	position: absolute;
+}
+
+.ui-c-drag-region {
+	position: relative;
+}
+
+.ui-c-drag-box {
+	overflow: hidden;
+	cursor: move;
+	position: absolute;
+	margin-left: 0;
+	margin-top: 0;
+}
+
+.ui-c-drag-triangle {
+	width: 141.4%;
+	height: 141.4%;
+	background-color: red;
+	position: relative;
+	transform: rotate(-45deg);
+	transform-origin: left top;
+	margin-left: -99.9698%;
+}
+
+.ui-c-drag-text {
+	text-align: center;
+	bottom: 0.5rem;
+	left: 0;
+	right: 0;
+	color: white;
+	position: absolute;
+	font-size: 12px;
+}
