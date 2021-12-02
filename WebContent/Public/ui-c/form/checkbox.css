@@ -1,0 +1,31 @@
+.ui-c-checkbox{
+	display: none;
+}
+.ui-c-checkbox-box{
+	display: inline-block; margin-right: 20px; cursor: pointer;
+}
+
+.ui-c-checkbox-div{
+	width: 16px; height: 16px; background: white; border: #D2D2D2 1px solid; margin-top: 6px; float: left; text-align: center; line-height: 18px; overflow: hidden; color: white; font-size: 14px; border-radius: 2px;
+}
+
+.ui-c-checkbox-div:hover{
+	border: #0099CC 1px solid;
+}
+
+.ui-c-checkbox-checked{
+	border: #0099CC 1px solid;
+	background: #0099CC;
+}
+
+.ui-c-checkbox-div-disabled{
+	color: #d2d2d2 !important;
+	cursor: not-allowed !important;
+}
+.ui-c-checkbox-disabled{
+	width: 16px; height: 16px; background: white; border: #D2D2D2 1px solid; margin-top: 6px; float: left; text-align: center; line-height: 18px; overflow: hidden; color: white; font-size: 14px; border-radius: 2px;
+}
+
+.ui-c-checkbox-title{
+	line-height: 30px; float: left; margin-left: 8px; font-size: 14px;
+}

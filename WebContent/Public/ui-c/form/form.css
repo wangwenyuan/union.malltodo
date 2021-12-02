@@ -1,0 +1,21 @@
+.ui-c-clear {
+	clear: both;
+}
+
+.ui-c-element{
+	width: 20rem;
+}
+
+.ui-c-input {
+	width: 100%;
+	padding-left: 0.625rem;
+	height: 1.875rem;
+	border-width: 0.0625rem;
+	border-style: solid;
+	background-color: white;
+	border-radius: 0.125rem;
+	display: block;
+	border-color: #e6e6e6;
+	box-sizing: border-box;
+	outline: none;
+}

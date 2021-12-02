@@ -1,0 +1,12 @@
+.income_box{width: 32.8%; float: left; margin-bottom: 10px;}
+.income_box_split{ width: 0.8%; float: left; margin-bottom: 10px; height: 102px;}
+.income_box_div{ padding: 20px; height: 60px; border: #EEEEEE 1px solid;}
+.income_box_icon{ width: 60px; height: 50px; padding-top:10px; border-radius: 30px; font-size: 45px; text-align: center; line-height: 60px; color: white; float: left;}
+.income_box_word{ height: 60px; overflow: hidden; line-height: 30px; float: left; font-size: 14px; margin-left: 15px; color: #AAAAAA;}
+.chart_box{ width: 49.5%; height: auto; border: #EEEEEE 1px solid;}
+.chart_div{ padding: 20px;}
+.chart_icon{ width: 30px; height: 25px; padding-top:5px; border-radius: 30px; text-align: center; line-height: 30px; color: white; float: left; font-size: 23px; margin-right: 10px;}
+.chart_right{ height: 30px; float: right; line-height: 30px; margin-left: 10px; font-size: 14px; color: #333333; cursor: pointer;}
+.chart_right_select{ color: #0D79B5; font-weight: bold;}
+.chart_title{ height: 36px; border-bottom: #EEEEEE 1px solid; line-height: 30px;}
+.chart_chart{ width: auto; height: 300px;}

@@ -1,0 +1,59 @@
+.ui-c-open {
+	display: none;
+}
+
+.ui-c-open-box {
+	display: inline-block;
+	margin-right: 20px;
+	cursor: pointer;
+}
+
+.ui-c-open-off {
+	width: 36px;
+	height: 10px;
+	background: white;
+	border: #d2d2d2 1px solid;
+	padding: 4px;
+	border-radius: 20px;
+	margin-top: 5px;
+	float: left;
+	cursor: pointer;
+}
+
+.ui-c-open-on {
+	border: #0099CC 1px solid;
+}
+
+.ui-c-open-point-off {
+	width: 10px;
+	height: 100%;
+	text-align: center;
+	line-height: 10px;
+	font-size: 8px;
+	overflow: hidden;
+	background-color: #D2D2D2;
+	border-radius: 0.625rem;
+	float: left;
+}
+
+.ui-c-open-point-on {
+	background-color: #0099CC;
+	float: right;
+}
+
+.ui-c-open-title-off {
+	width: 25px;
+	height: 100%;
+	float: right;
+	text-align: center;
+	line-height: 10px;
+	font-size: 8px;
+	overflow: hidden;
+	color: #D2D2D2;
+	float: right;
+}
+
+.ui-c-open-title-on {
+	color: #0099CC;
+	float: left;
+}

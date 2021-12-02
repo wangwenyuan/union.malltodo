@@ -1,0 +1,124 @@
+.ui-c-select {
+	width: 100%;
+	padding-left: 0.625rem;
+	height: 1.875rem;
+	border-width: 0.0625rem;
+	border-style: solid;
+	background-color: white;
+	border-radius: 0.125rem;
+	display: block;
+	border-color: #e6e6e6;
+	box-sizing: border-box;
+	outline: none;
+	display: none;
+}
+
+.ui-c-select-div {
+	width: 100%;
+	padding-left: 0.625rem;
+	height: 1.875rem;
+	border-width: 0.0625rem;
+	border-style: solid;
+	background-color: white;
+	border-radius: 0.125rem;
+	display: block;
+	border-color: #e6e6e6;
+	padding-right: 1.875rem;
+	box-sizing: border-box;
+	outline: none;
+	cursor: pointer;
+	position: relative;
+}
+
+.ui-c-select-title {
+	width: 100%;
+	height: 100%;
+	display: block;
+	border: none;
+	box-sizing: border-box;
+	outline: none;
+	cursor: pointer;
+}
+
+.ui-c-select-box {
+	display: none;
+	position: absolute;
+	left: 0;
+	top: 2rem;
+	padding: 5px 0;
+	z-index: 899;
+	min-width: 100%;
+	border: 1px solid #e6e6e6;
+	max-height: 300px;
+	overflow-y: auto;
+	background-color: #fff;
+	border-radius: 2px;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, .12);
+	box-sizing: border-box;
+}
+
+.ui-c-optgroup {
+	padding-left: 0.625rem;
+	width: auto;
+	height: 1.875rem;
+	line-height: 1.875rem;
+	color: #999;
+	cursor: auto;
+	font-size: 0.875rem;
+}
+
+.ui-c-option {
+	padding-left: 1.25rem;
+	width: auto;
+	height: 1.875rem;
+	line-height: 1.875rem;
+	color: #333333;
+	cursor: pointer;
+	font-size: 0.875rem;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.ui-c-option:hover {
+	background-color: #E6E6E6;
+}
+
+.ui-c-option-disabled {
+	cursor: auto;
+	color: #999;
+}
+
+.ui-c-option-disabled:hover {
+	background: none;
+}
+
+.ui-c-option-selected {
+	background-color: #09C;
+	color: white;
+}
+
+.ui-c-option-selected:hover {
+	background-color: #09C;
+	color: white;
+}
+
+.ui-c-option-null {
+	cursor: pointer;
+	color: #999;
+}
+
+.ui-c-select-arrow {
+	width: 0px;
+	height: 0px;
+	position: absolute;
+	top: 3px;
+	right: 18px;
+	display: inline-block;
+	text-align: right;
+	color: rgb(194, 194, 194);
+}
+
+.ui-c-select-arrow-transform {
+	transform: rotate(180deg);
+}
