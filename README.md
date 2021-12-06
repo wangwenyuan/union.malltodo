@@ -6,7 +6,7 @@
 MALLTODO 的官方网址是： www.malltodo.com
 
 # MALLTODO后台操作视频详解
-MALLTODO电商联盟系统后台操作视频详解：
+MALLTODO电商联盟系统后台操作视频详解：  
 （1）MALLTODO后台操作指南——首页设计，链接地址：https://v.youku.com/v_show/id_XNTgyNDY0MDQ3Mg==.html  
 （2）MALLTODO后台操作指南——栏目页设计，链接地址：https://v.youku.com/v_show/id_XNTgyNTAzMTgzNg==.html  
 （3）MALLTODO后台操作指南——商品列表页设计，链接地址：https://v.youku.com/v_show/id_XNTgyNTAzNDkxNg==.html  
@@ -37,11 +37,9 @@ MALLTODO电商联盟系统后台操作视频详解：
 
 2、未经官方许可，不得对本软件或与之关联的商业授权进行出租、出售、抵押或发放子许可证。
 
-3、不管你的网站是否整体使用 MALLTODO ，还是部分栏目使用 MALLTODO，在你使用了 MALLTODO 的网站主页上必须加上 MALLTODO 官方网址(www.malltodo.com)的链接。
+3、未经官方许可，禁止在 MALLTODO 的整体或任何部分基础上以发展任何派生版本、修改版本或第三方版本用于重新分发。
 
-4、未经官方许可，禁止在 MALLTODO 的整体或任何部分基础上以发展任何派生版本、修改版本或第三方版本用于重新分发。
-
-5、如果您未能遵守本协议的条款，您的授权将被终止，所被许可的权利将被收回，并承担相应法律责任。
+4、如果您未能遵守本协议的条款，您的授权将被终止，所被许可的权利将被收回，并承担相应法律责任。
 
 三、有限担保和免责声明
 1、本软件及所附带的文件是作为不提供任何明确的或隐含的赔偿或担保的形式提供的。
