@@ -5,6 +5,22 @@
 
 MALLTODO 的官方网址是： www.malltodo.com
 
+# MALLTODO后台操作视频详解
+MALLTODO电商联盟系统后台操作视频详解：
+（1）MALLTODO后台操作指南——首页设计，链接地址：https://v.youku.com/v_show/id_XNTgyNDY0MDQ3Mg==.html  
+（2）MALLTODO后台操作指南——栏目页设计，链接地址：https://v.youku.com/v_show/id_XNTgyNTAzMTgzNg==.html  
+（3）MALLTODO后台操作指南——商品列表页设计，链接地址：https://v.youku.com/v_show/id_XNTgyNTAzNDkxNg==.html  
+（4）MALLTODO后台操作指南——商品搜索页设计，链接地址：https://v.youku.com/v_show/id_XNTgyNDY0ODEwNA==.html  
+（5）MALLTODO后台操作指南——商品详情页设计，链接地址：https://v.youku.com/v_show/id_XNTgyNDY0ODI0NA==.html  
+（6）MALLTODO后台操作指南——会员中心页设计，链接地址：https://v.youku.com/v_show/id_XNTgyNTAzOTYyMA==.html  
+（7）MALLTODO后台操作指南——我的订单页设计，链接地址：https://v.youku.com/v_show/id_XNTgyNTAzOTcxNg==.html  
+（8）MALLTODO后台操作指南——我的团队页设计，链接地址：https://v.youku.com/v_show/id_XNTgyNDY1MDAwMA==.html  
+（9）MALLTODO后台操作指南——我的收益页设计，链接地址：https://v.youku.com/v_show/id_XNTgyNDY0ODY4NA==.html  
+（10）MALLTODO后台操作指南——资金记录页设计，链接地址：https://v.youku.com/v_show/id_XNTgyNTA0NDAxMg==.html  
+（11）MALLTODO后台操作指南——海报设计，链接地址：https://v.youku.com/v_show/id_XNTgyNTMzMjA2OA==.html  
+（12）MALLTODO后台操作指南——三级分销，链接地址：https://v.youku.com/v_show/id_XNTgyNTMzMjI4MA==.html  
+
+# MALLTODO协议条款
 为了使你正确并合法的使用本软件，请你在使用前务必阅读清楚下面的协议条款：
 
 一、本授权协议适用且仅适用于 MALLTODO V1.x 版本，MALLTODO官方对本授权协议的最终解释权。 二、协议许可的权利
