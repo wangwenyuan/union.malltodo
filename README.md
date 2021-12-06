@@ -5,6 +5,23 @@
 
 MALLTODO 的官方网址是： www.malltodo.com
 
+# MALLTODO安装
+1 安装java环境，对于java程序员来讲配置java环境不是什么难事，对于不太熟悉java环境的朋友可以参考下面这个网页，它很详细地介绍了java开发环境的搭建。（MALLTODO推荐使用jdk8和tomcat8，其他版本的目前未经过测试）对于找不到java8安装包的朋友可以到360的软件宝库中下载。
+Java 开发环境配置：https://www.runoob.com/java/java-environment-setup.html
+
+2 安装tomcat，参考下面链接。（熟悉的朋友可以直接跳过）
+https://www.runoob.com/servlet/servlet-environment-setup.html
+
+3 下载MALLTODO，github或者gitee仓库中的MALLTODO是以源码的形式提供的，但是里面也包含有已经编译过的class文件，可以直接使用，无需再次编译。  
+1）下载MALLTODO，然后解压，解压后可以发现里面由一个WebContent文件夹，这个文件夹里面包含有网站的静态文件以及编译好的class文件和其他jar文件，可以直接上传到服务器上使用。  
+2）修改tomcat的配置文件，使其指向WebContent文件夹（tomcat的配置文件在：tomcat安装目录/conf/server.xml，打开后找到Host节点，然后在节点内加上  <Context path="/" docBase="WebContent文件夹的路径" debug="0" reloadable="true"/>  ）  
+3）启动tomcat，打开浏览器，输入127.0.0.1:8080开始按照提示步骤进行安装。
+
+详细的安装视频如下：  
+https://v.youku.com/v_show/id_XNTgyNTA2MTQxNg==.html
+
+安装完成以后，网站前台：您的域名/index.jsp；网站后台：您的域名/admin.jsp  
+
 # MALLTODO后台操作视频详解
 MALLTODO电商联盟系统后台操作视频详解：  
 （1）MALLTODO后台操作指南——首页设计，链接地址：https://v.youku.com/v_show/id_XNTgyNDY0MDQ3Mg==.html  
@@ -19,6 +36,10 @@ MALLTODO电商联盟系统后台操作视频详解：
 （10）MALLTODO后台操作指南——资金记录页设计，链接地址：https://v.youku.com/v_show/id_XNTgyNTA0NDAxMg==.html  
 （11）MALLTODO后台操作指南——海报设计，链接地址：https://v.youku.com/v_show/id_XNTgyNTMzMjA2OA==.html  
 （12）MALLTODO后台操作指南——三级分销，链接地址：https://v.youku.com/v_show/id_XNTgyNTMzMjI4MA==.html  
+
+# 将MALLTODO导入eclipse中进行二次开发
+下载MALLTODO，解压后直接导入eclipse中即可进行二次开发。  
+操作视频：https://v.youku.com/v_show/id_XNTgyNTUxMTU5Mg==.html
 
 # MALLTODO协议条款
 为了使你正确并合法的使用本软件，请你在使用前务必阅读清楚下面的协议条款：
