@@ -13,9 +13,9 @@ Java 开发环境配置：https://www.runoob.com/java/java-environment-setup.htm
 https://www.runoob.com/servlet/servlet-environment-setup.html
 
 3 下载MALLTODO，github或者gitee仓库中的MALLTODO是以源码的形式提供的，但是里面也包含有已经编译过的class文件，可以直接使用，无需再次编译。  
-1）下载MALLTODO，然后解压，解压后可以发现里面由一个WebContent文件夹，这个文件夹里面包含有网站的静态文件以及编译好的class文件和其他jar文件，可以直接上传到服务器上使用。  
-2）修改tomcat的配置文件，使其指向WebContent文件夹（tomcat的配置文件在：tomcat安装目录/conf/server.xml，打开后找到Host节点，然后在节点内加上  <Context path="/" docBase="WebContent文件夹的路径" debug="0" reloadable="true"/>  ）  
-3）启动tomcat，打开浏览器，输入127.0.0.1:8080开始按照提示步骤进行安装。
+1）下载MALLTODO，然后解压，解压后可以发现里面有一个WebContent文件夹，这个文件夹里面包含有网站的静态文件以及编译好的class文件和其他jar文件，可以直接上传到服务器上使用。  
+2）修改tomcat的配置文件，使其指向WebContent文件夹（tomcat的配置文件在：tomcat安装目录/conf/server.xml，打开后找到Host节点，然后在节点内加上\<Context path="/" docBase="WebContent文件夹的路径" debug="0" reloadable="true"/>）  
+3）启动tomcat，打开浏览器，输入127.0.0.1:8080按照提示步骤进行安装。
 
 详细的安装视频如下：  
 https://v.youku.com/v_show/id_XNTgyNTA2MTQxNg==.html
