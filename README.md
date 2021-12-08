@@ -74,3 +74,13 @@ MALLTODO电商联盟系统后台操作视频详解：
 协议发布时间： 2021年09月01日
 
 版本最新更新： 2021年09月01日 By malltodo.com
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?68e438e21eee77948dc43be94ed022ea";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
