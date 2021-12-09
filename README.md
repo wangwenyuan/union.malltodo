@@ -5,8 +5,21 @@
 
 MALLTODO 的官方网址是： www.malltodo.com
 
+# MALLTODO软件截图
+
+![image](./readme_images/001.png)  
+![image](./readme_images/002.png)  
+![image](./readme_images/003.png)  
+![image](./readme_images/004.png)  
+![image](./readme_images/005.png)  
+![image](./readme_images/006.png)  
+![image](./readme_images/007.png)  
+![image](./readme_images/008.png)  
+![image](./readme_images/009.png)  
+![image](./readme_images/010.jpg)  
+
 # MALLTODO安装
-1 安装java环境，对于java程序员来讲配置java环境不是什么难事，对于不太熟悉java环境的朋友可以参考下面这个网页，它很详细地介绍了java开发环境的搭建。（MALLTODO推荐使用jdk8和tomcat8，其他版本的目前未经过测试）对于找不到java8安装包的朋友可以到360的软件宝库中下载。
+1 安装java环境，对于java程序员来讲配置java环境不是什么难事，对于不太熟悉java环境的朋友可以参考下面这个网页，它很详细地介绍了java开发环境的搭建。（MALLTODO推荐使用jdk1.8和tomcat8，其他版本的目前未经过测试）对于找不到java8安装包的朋友可以到360的软件宝库中下载。
 Java 开发环境配置：https://www.runoob.com/java/java-environment-setup.html
 
 2 安装tomcat，参考下面链接。（熟悉的朋友可以直接跳过）
