@@ -26,20 +26,6 @@ import admin.Index.CommonController;
 import common.Functions;
 import common.MobileWidget;
 import common.SystemWidget;
-import common.widget.data.Category;
-import common.widget.data.CategoryGoodsList;
-import common.widget.data.CategoryName;
-import common.widget.data.Goods;
-import common.widget.data.GoodsBanner;
-import common.widget.data.GoodsBottom;
-import common.widget.data.GoodsCoupon;
-import common.widget.data.GoodsDetail;
-import common.widget.data.GoodsName;
-import common.widget.data.Menu;
-import common.widget.data.MoneyLogList;
-import common.widget.data.SearchGoodsList;
-import common.widget.data.TeamList;
-import common.widget.data.User;
 import freemarker.template.TemplateException;
 
 public class ShowWidgetController extends CommonController {
@@ -76,67 +62,6 @@ public class ShowWidgetController extends CommonController {
 		String system_html = SystemWidget.buildSystemWidgetPage(servlet.getServletContext().getRealPath("/"), object.getJSONObject("dom"));
 		system_html = "<div class=\"ui-c-box\"><div class=\"ui-c-box-left\" style=\"font-size: 1rem\"><strong>" + name + "</strong></div><div class=\"ui-c-box-right\"><a class=\"main_del_button\" onclick=\"del_dom('" + object.getJSONObject("dom").getString("sign") + "')\">删除</a></div><div class=\"ui-c-clear\"></div></div>" + system_html;
 
-		// 处理绑定其他模块的组件（开始）
-		JSONObject jsonObject = null;
-		if (category.equals("goods")) {
-			jsonObject = new Goods().parameter;
-		}
-
-		if (category.equals("category")) {
-			jsonObject = new Category().parameter;
-		}
-
-		if (category.equals("menu")) {
-			jsonObject = new Menu().parameter;
-		}
-
-		if (category.equals("categoryName")) {
-			jsonObject = new CategoryName().parameter;
-		}
-
-		if (category.equals("categoryGoodsList")) {
-			jsonObject = new CategoryGoodsList().parameter;
-		}
-
-		if (category.equals("searchGoodsList")) {
-			jsonObject = new SearchGoodsList().parameter;
-		}
-
-		if (category.equals("goodsBanner")) {
-			jsonObject = new GoodsBanner().parameter;
-		}
-
-		if (category.equals("goodsBottom")) {
-			jsonObject = new GoodsBottom().parameter;
-		}
-
-		if (category.equals("goodsCoupon")) {
-			jsonObject = new GoodsCoupon().parameter;
-		}
-
-		if (category.equals("goodsDetail")) {
-			jsonObject = new GoodsDetail().parameter;
-		}
-
-		if (category.equals("goodsName")) {
-			jsonObject = new GoodsName().parameter;
-		}
-
-		if (category.equals("user")) {
-			jsonObject = new User().parameter;
-		}
-
-		if (category.equals("teamList")) {
-			jsonObject = new TeamList().parameter;
-		}
-
-		if (category.equals("moneyLogList")) {
-			jsonObject = new MoneyLogList().parameter;
-		}
-
-		if (jsonObject != null) {
-			system_html = system_html + this.getModelSystemHtml(jsonObject, object.getJSONObject("dom").getString("sign"));
-		}
 		// 处理绑定其他模块的组件（结束）
 
 		object.put("system_html", system_html);
