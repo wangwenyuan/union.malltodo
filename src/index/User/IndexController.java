@@ -15,27 +15,9 @@ package index.User;
 
 import java.io.UnsupportedEncodingException;
 import java.sql.SQLException;
-import java.util.HashMap;
-import java.util.Map;
-
-import com.javatodo.core.model.W;
-
-import common.MU;
-import common.MobileWidget;
-import common.database.RENOVATION;
 
 public class IndexController extends UserCommonController {
 	public void indexPage() throws SQLException, UnsupportedEncodingException {
-		Map<String, W> where = new HashMap<String, W>();
-		where.put(RENOVATION.type, new W("eq", "User/Index/index"));
-		where.put(RENOVATION.is_default, new W("eq", 1));
-		where.put(RENOVATION.is_del, new W("eq", 0));
-		Map<String, Object> map = new MU(RENOVATION._table_name).where(where).find();
-		if (map != null) {
-			String html = MobileWidget.buildPage(map.get(RENOVATION.id).toString(), webRequestParam);
-			this.htmlDisplay(html);
-		} else {
-			this.htmlDisplay(MobileWidget.noTemplateNotice());
-		}
+
 	}
 }
