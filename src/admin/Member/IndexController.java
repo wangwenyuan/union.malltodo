@@ -14,7 +14,6 @@
 package admin.Member;
 
 import java.io.IOException;
-import java.math.BigDecimal;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
@@ -26,13 +25,11 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.javatodo.core.model.W;
 import com.javatodo.core.tools.Page;
-import com.javatodo.core.tools.T;
 
 import admin.Index.CommonController;
 import common.MU;
 import common.database.MEMBER;
 import freemarker.template.TemplateException;
-import model.Balance;
 
 public class IndexController extends CommonController {
 	public void indexPage() throws SQLException, IOException, ServletException, TemplateException {
@@ -50,32 +47,5 @@ public class IndexController extends CommonController {
 		List<Map<String, Object>> list = new MU(MEMBER._table_name).where(where).limit(page.firstRow + "," + page.listRows).order(MEMBER.id + " desc").select();
 		this.assign("list", JSONArray.parse(JSON.toJSONString(list)));
 		this.display();
-	}
-
-	public void balancePage() throws SQLException, IOException, ServletException, TemplateException {
-		Map<String, W> where = new HashMap<>();
-		where.put(MEMBER.is_del, new W("eq", 0));
-		where.put(MEMBER.id, new W("eq", I(MEMBER.id).trim()));
-		Map<String, Object> info = new MU(MEMBER._table_name).where(where).find();
-		if (info == null) {
-			this.error("该用户不存在或已被删除");
-			return;
-		}
-		if (IS_POST) {
-			Integer type = T.toInt(I("type").trim());
-			if (type != 1 && type != 2) {
-				this.error("请选择是增加余额还是减少余额");
-				return;
-			}
-			String money_string = String.valueOf(T.toFloat(I("money").toString()));
-			BigDecimal money = new BigDecimal(money_string);
-			if (type == 2) {
-				money = new BigDecimal("0").subtract(money);
-			}
-			Balance.AdministratorAdjustmentBalance(money.toString(), I(MEMBER.id).trim(), session("admin_id").toString());
-			this.success("设置成功");
-		} else {
-			this.display();
-		}
 	}
 }
