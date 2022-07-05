@@ -12,14 +12,14 @@ import com.javatodo.core.model.W;
 import com.javatodo.core.tools.Page;
 
 import common.MU;
-import common.database.CNBLOGS_ARTICLES;
+import common.database.AGREEMENT;
 import freemarker.template.TemplateException;
 
 public class ArticleController extends CommonController {
 	public void indexPage() throws IOException, ServletException, TemplateException, SQLException {
-		long count = new MU(CNBLOGS_ARTICLES._table_name).count();
+		long count = new MU(AGREEMENT._table_name).count();
 		Page page = this.page(count, 16);
-		List<Map<String, Object>> list = new MU(CNBLOGS_ARTICLES._table_name).order(page.firstRow + "," + page.listRows).order(CNBLOGS_ARTICLES.id + " desc").select();
+		List<Map<String, Object>> list = new MU(AGREEMENT._table_name).order(page.firstRow + "," + page.listRows).order(AGREEMENT.id + " desc").select();
 		this.assign("list", list);
 		this.assign("page", page.show());
 		this.display();
@@ -28,8 +28,8 @@ public class ArticleController extends CommonController {
 	public void detailPage() throws IOException, ServletException, TemplateException, SQLException {
 		String article_id = I("id");
 		Map<String, W> where = new HashMap<>();
-		where.put(CNBLOGS_ARTICLES.article_id, new W("eq", article_id));
-		Map<String, Object> info = new MU(CNBLOGS_ARTICLES._table_name).where(where).find();
+		where.put(AGREEMENT.id, new W("eq", article_id));
+		Map<String, Object> info = new MU(AGREEMENT._table_name).where(where).find();
 		this.assign("info", info);
 		this.display();
 	}
