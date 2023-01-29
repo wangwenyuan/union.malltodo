@@ -7,7 +7,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>程序安装-MALLTODO智慧点餐系统 V1.0</title>
+    <title>程序安装-MALLTODO电商联盟系统 V2.0</title>
     <script type="text/javascript" src="<%=request.getAttribute("PUBLIC") %>/js/jquery-1.12.4.min.js"></script>
     <script type="text/javascript" src="<%=request.getAttribute("PUBLIC") %>/js/layer.js"></script>
     <script>
