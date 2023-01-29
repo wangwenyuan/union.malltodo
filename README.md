@@ -3,9 +3,10 @@
 
 感谢您选择MALLTODO电商联盟系统（以下简称MALLTODO），MALLTODO由郑州掌勺信息技术有限公司开发，是目前国内强大、稳定的导购返利类网站建设解决方案之一，基于 JAVA + MySQL 的技术开发，全部源码开放。
 
-2.0版本集成了MALLTODO零代码企业建站系统。
+**2.0版本集成了MALLTODO零代码企业建站系统。**
 
-MALLTODO 的官方网址是： www.malltodo.com，MALLTODO电商联盟系统网址：union.malltodo.com
+MALLTODO的官方网址是： www.malltodo.com 
+MALLTODO电商联盟系统网址：union.malltodo.com
 
 # MALLTODO软件截图
 
@@ -20,8 +21,36 @@ MALLTODO 的官方网址是： www.malltodo.com，MALLTODO电商联盟系统网�
 ![image](./readme_images/009.png)  
 ![image](./readme_images/010.jpg)  
 
+# MALLTODO零代码企业建站系统
+MALLTODO零代码建站系统可以帮助用户快速搭建个性化的企业官网，无需专业的编程知识，提供可视化设计器及管理后台，网站的制作过程就像搭积木一样把需要的组件拖拽过来。真正做到“会打字就能建网站”，且所生成的网站均为响应式，支持电脑端，平板，手机等所有设备，还可以嵌入微信公众号，小程序，抖音，快手等平台。  
+
+# 与其他同类型产品的区别
+
+**MALLTODO零代码建站系统不同于市面上其他类似的系统，其他系统大多是基于vue开发的，做出来的网站百度收录不了，这个系统是我们自己研发的模板引擎，可以生成实实在在的html代码，所以百度可以收录，并且可以做SEO优化。**  
+  
+MALLTODO 的官方网址是： www.malltodo.com
+
+# 免费版与收费版的区别
+免费版的组件较少，收费版的组件更为丰富。  
+
+# MALLTODO软件截图
+
+![image](./readme_images/001.gif)  
+![image](./readme_images/002.gif)  
+![image](./readme_images/003.gif)  
+![image](./readme_images/004.gif)  
+![image](./readme_images/005.gif)  
+![image](./readme_images/006.gif)  
+ 
+
+# MALLTODO技术交流
+
+![image](./readme_images/weixin.png)  
+
+
+
 # MALLTODO安装
-1 安装java环境，对于java程序员来讲配置java环境不是什么难事，对于不太熟悉java环境的朋友可以参考下面这个网页，它很详细地介绍了java开发环境的搭建。（MALLTODO推荐使用jdk1.8和tomcat8，其他版本的目前未经过测试）对于找不到java8安装包的朋友可以到360的软件宝库中下载。
+1 安装java环境，对于java程序员来讲配置java环境不是什么难事，对于不太熟悉java环境的朋友可以参考下面这个网页，它很详细地介绍了java开发环境的搭建。（MALLTODO推荐使用jdk1.8和tomcat8，其他版本的目前未经过测试）对于找不到java8安装包的朋友可以到360的软件宝库中下载。 
 Java 开发环境配置：https://www.runoob.com/java/java-environment-setup.html
 
 2 安装tomcat，参考下面链接。（熟悉的朋友可以直接跳过）
@@ -35,7 +64,7 @@ https://www.runoob.com/servlet/servlet-environment-setup.html
 详细的安装视频如下：  
 https://v.youku.com/v_show/id_XNTgyNTA2MTQxNg==.html
 
-安装完成以后，网站前台：您的域名/index.jsp；网站后台：您的域名/admin.jsp  
+安装完成以后，官网前台：您的域名/index.jsp；电商联盟系统前台：您的域名/index.union.jsp；网站后台：您的域名/admin.jsp  
 
 # MALLTODO后台操作视频详解
 MALLTODO电商联盟系统后台操作视频详解：  

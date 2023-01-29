@@ -18,7 +18,7 @@
       	<%
       	JSONArray list = (JSONArray)request.getAttribute("list");
       	if(list.size() == 0){
-      		out.println("<tr><td colspan='5'>您尚未创建自定义页面，<a target='_blank' href='"+T.U(request.getAttribute("MODULE_NAME").toString()+"/Custom/index", "admin."+Functions.getMenuCategoryName(request)+".jsp", request)+"'>前去创建自定义页面</a></td></tr>");
+      		out.println("<tr><td colspan='5'>您尚未创建自定义页面，<a target='_blank' href='"+T.U("PcRenovation/Custom/index", "admin.home.jsp", request)+"'>前去创建自定义页面</a></td></tr>");
       	}
       	for(Integer i=0; i<list.size(); i=i+1){
       		JSONObject object = list.getJSONObject(i);

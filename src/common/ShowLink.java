@@ -25,6 +25,7 @@ import javax.servlet.ServletException;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONArray;
 import com.javatodo.core.model.W;
+import com.javatodo.core.tools.Http;
 import com.javatodo.core.tools.T;
 
 import admin.home.Index.CommonController;
@@ -45,12 +46,18 @@ public class ShowLink extends CommonController {
 		this.listPage();
 	}
 
-	public void orderDishPage() throws IOException, ServletException, TemplateException {
+	public void unionPage() throws IOException, ServletException, TemplateException {
 		Map<String, String> linkMap = new LinkedHashMap();
-		// 官网相关链接
-		for (String key : Common.order_dish_menu.keySet()) {
-			linkMap.put(Common.order_dish_menu.get(key), T.U(key, "restaurant.jsp"));
-		}
+		linkMap.put("首页", T.U("Index/Index/index", "index.union.jsp", request));
+		linkMap.put("商品栏目", T.U("Index/Index/menu", "index.union.jsp", request));
+		linkMap.put("会员中心", T.U("User/Index/index", "index.union.jsp", request));
+		linkMap.put("我的订单", T.U("User/Order/index", "index.union.jsp", request));
+		linkMap.put("推广海报", T.U("Index/Qr/index", "index.union.jsp", request));
+		linkMap.put("我的团队", T.U("User/Team/index", "index.union.jsp", request));
+		linkMap.put("我的收益", T.U("User/Income/index", "index.union.jsp", request));
+		linkMap.put("资金记录", T.U("User/MoneyLog/index", "index.union.jsp", request));
+		linkMap.put("我要提现", T.U("User/Withdrawal/index", "index.union.jsp", request));
+		linkMap.put("基本信息设置", T.U("User/Set/index", "index.union.jsp", request));
 		this.assign("linkMap", linkMap);
 		this.listPage();
 	}
@@ -59,11 +66,30 @@ public class ShowLink extends CommonController {
 		this.listPage();
 	}
 
+	public void meituanPage() throws IOException, ServletException, TemplateException {
+		Http http = new Http();
+		String meituan_json_string = http.get(Common.unionHost + "/api.jsp?m=Index&c=Meituan&a=index");
+		JSONArray list = JSONArray.parseArray(meituan_json_string);
+		this.assign("list", list);
+		this.listPage();
+	}
+
 	public void customPage() throws SQLException, IOException, ServletException, TemplateException {
 		Map<String, W> where = new HashMap<String, W>();
 		where.put(RENOVATION.is_del, new W("eq", 0));
 		where.put(RENOVATION.type, new W("eq", "Index/Index/custom"));
-		where.put(RENOVATION.platform, new W("eq", this.platform));
+		where.put(RENOVATION.platform, new W("eq", "pc"));
+		List<Map<String, Object>> list = new MU(RENOVATION._table_name).where(where).order(RENOVATION.id + " desc").field(RENOVATION.id + "," + RENOVATION.name).select();
+		JSONArray jsonArray = JSONArray.parseArray(JSON.toJSONString(list));
+		this.assign("list", jsonArray);
+		this.listPage();
+	}
+
+	public void unioncustomPage() throws SQLException, IOException, ServletException, TemplateException {
+		Map<String, W> where = new HashMap<String, W>();
+		where.put(RENOVATION.is_del, new W("eq", 0));
+		where.put(RENOVATION.type, new W("eq", "Union/Index/custom"));
+		where.put(RENOVATION.platform, new W("eq", "mobile"));
 		List<Map<String, Object>> list = new MU(RENOVATION._table_name).where(where).order(RENOVATION.id + " desc").field(RENOVATION.id + "," + RENOVATION.name).select();
 		JSONArray jsonArray = JSONArray.parseArray(JSON.toJSONString(list));
 		this.assign("list", jsonArray);

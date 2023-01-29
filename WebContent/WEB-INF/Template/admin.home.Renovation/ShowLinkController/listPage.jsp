@@ -48,14 +48,28 @@
 				<a class="main_button" href="<%=T.U(request.getAttribute("MODULE_NAME").toString()+"/ShowLink/index", "href_dom_id="+href_dom_id, "admin."+Functions.getMenuCategoryName(request)+".jsp", request) %>">官网页面</a>
 			<% 	
 			}
-
-			if(ACTION_NAME.equals("orderDish")){
 			%>
-				<a class="selected_button" href="<%=T.U(request.getAttribute("MODULE_NAME").toString()+"/ShowLink/orderDish", "href_dom_id="+href_dom_id, "admin."+Functions.getMenuCategoryName(request)+".jsp", request) %>">点餐页面</a>
+			
+			<%
+			if(ACTION_NAME.equals("union")){
+			%>
+				<a class="selected_button" href="<%=T.U(request.getAttribute("MODULE_NAME").toString()+"/ShowLink/union", "href_dom_id="+href_dom_id, "admin."+Functions.getMenuCategoryName(request)+".jsp", request) %>">电商联盟</a>
 			<%
 			}else{
 			%>
-				<a class="main_button" href="<%=T.U(request.getAttribute("MODULE_NAME").toString()+"/ShowLink/orderDish", "href_dom_id="+href_dom_id, "admin."+Functions.getMenuCategoryName(request)+".jsp", request) %>">点餐页面</a>
+				<a class="main_button" href="<%=T.U(request.getAttribute("MODULE_NAME").toString()+"/ShowLink/union", "href_dom_id="+href_dom_id, "admin."+Functions.getMenuCategoryName(request)+".jsp", request) %>">电商联盟</a>
+			<% 	
+			}
+			%>
+			
+			<%
+			if(ACTION_NAME.equals("meituan")){
+			%>
+				<a class="selected_button" href="<%=T.U(request.getAttribute("MODULE_NAME").toString()+"/ShowLink/meituan", "href_dom_id="+href_dom_id, "admin."+Functions.getMenuCategoryName(request)+".jsp", request) %>">美团</a>
+			<%
+			}else{
+			%>
+				<a class="main_button" href="<%=T.U(request.getAttribute("MODULE_NAME").toString()+"/ShowLink/meituan", "href_dom_id="+href_dom_id, "admin."+Functions.getMenuCategoryName(request)+".jsp", request) %>">美团</a>
 			<% 	
 			}
 			%>
@@ -63,11 +77,23 @@
 			<%
 			if(ACTION_NAME.equals("custom")){
 			%>
-				<a class="selected_button" href="<%=T.U(request.getAttribute("MODULE_NAME").toString()+"/ShowLink/custom", "href_dom_id="+href_dom_id, "admin."+Functions.getMenuCategoryName(request)+".jsp", request) %>">自定义页面</a>
+				<a class="selected_button" href="<%=T.U(request.getAttribute("MODULE_NAME").toString()+"/ShowLink/custom", "href_dom_id="+href_dom_id, "admin."+Functions.getMenuCategoryName(request)+".jsp", request) %>">官网自定义页面</a>
 			<%
 			}else{
 			%>
-				<a class="main_button" href="<%=T.U(request.getAttribute("MODULE_NAME").toString()+"/ShowLink/custom", "href_dom_id="+href_dom_id, "admin."+Functions.getMenuCategoryName(request)+".jsp", request) %>">自定义页面</a>
+				<a class="main_button" href="<%=T.U(request.getAttribute("MODULE_NAME").toString()+"/ShowLink/custom", "href_dom_id="+href_dom_id, "admin."+Functions.getMenuCategoryName(request)+".jsp", request) %>">官网自定义页面</a>
+			<% 	
+			}
+			%>
+			
+			<%
+			if(ACTION_NAME.equals("unioncustom")){
+			%>
+				<a class="selected_button" href="<%=T.U(request.getAttribute("MODULE_NAME").toString()+"/ShowLink/unioncustom", "href_dom_id="+href_dom_id, "admin."+Functions.getMenuCategoryName(request)+".jsp", request) %>">联盟自定义页面</a>
+			<%
+			}else{
+			%>
+				<a class="main_button" href="<%=T.U(request.getAttribute("MODULE_NAME").toString()+"/ShowLink/unioncustom", "href_dom_id="+href_dom_id, "admin."+Functions.getMenuCategoryName(request)+".jsp", request) %>">联盟自定义页面</a>
 			<% 	
 			}
 			%>
@@ -85,9 +111,17 @@
 			%>
 			
 			<%
-			if(ACTION_NAME.equals("orderDish")){
+			if(ACTION_NAME.equals("union")){
 			%>
-				<%@include file="./orderDish.jsp"%>
+				<%@include file="./union.jsp"%>
+			<%
+			}
+			%>
+			
+			<%
+			if(ACTION_NAME.equals("meituan")){
+			%>
+				<%@include file="./meituan.jsp"%>
 			<%
 			}
 			%>
@@ -96,6 +130,14 @@
 			if(ACTION_NAME.equals("custom")){
 			%>
 				<%@include file="./custom.jsp"%>
+			<%
+			}
+			%>
+			
+			<%
+			if(ACTION_NAME.equals("unioncustom")){
+			%>
+				<%@include file="./unioncustom.jsp"%>
 			<%
 			}
 			%>
