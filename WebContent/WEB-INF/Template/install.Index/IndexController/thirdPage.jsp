@@ -7,8 +7,8 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>程序安装-MALLTODO电商联盟系统 V1.0</title>
-    <script type="text/javascript" src="<%=request.getAttribute("PUBLIC") %>/js/jquery-1.9.1.js"></script>
+    <title>程序安装-MALLTODO智慧点餐 V1.0</title>
+    <script type="text/javascript" src="<%=request.getAttribute("PUBLIC") %>/js/jquery-1.12.4.min.js"></script>
     <script type="text/javascript" src="<%=request.getAttribute("PUBLIC") %>/js/layer.js"></script>
     <script>
         if (window.top != window) {
@@ -179,7 +179,7 @@
     </div>
 
     <div class="install_btn">
-        <div id="tijiao" style="float:left" onclick="window.location.href = '<%=T.U("Index/Index/second", "index.jsp") %>'">
+        <div id="tijiao" style="float:left" onclick="window.location.href = '<%=T.U("Index/Index/second", "index.jsp", request) %>'">
             上一步
         </div>
         <div id="tijiao" style="float:right" onclick="set_db()">

@@ -1,3 +1,5 @@
+<%@page import="common.Functions"%>
+<%@page import="com.javatodo.core.tools.T"%>
 <%@page import="com.javatodo.core.router.RC"%>
 <%@page import="java.io.File"%>
 <%@page import="common.Common"%>

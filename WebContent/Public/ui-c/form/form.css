@@ -1,3 +1,9 @@
+/*
+ * UI-C
+ * Copyright (c) 2022 http://ui-c.com All rights reserved.
+ * Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
+ * Author: wangwenyuan <827287829@qq.com>
+ */
 .ui-c-clear {
 	clear: both;
 }
@@ -10,6 +16,20 @@
 	width: 100%;
 	padding-left: 0.625rem;
 	height: 1.875rem;
+	border-width: 0.0625rem;
+	border-style: solid;
+	background-color: white;
+	border-radius: 0.125rem;
+	display: block;
+	border-color: #e6e6e6;
+	box-sizing: border-box;
+	outline: none;
+}
+
+.ui-c-textarea {
+	width: 100%;
+	padding-left: 0.625rem;
+	height: 12.5rem;
 	border-width: 0.0625rem;
 	border-style: solid;
 	background-color: white;

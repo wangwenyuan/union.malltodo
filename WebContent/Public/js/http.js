@@ -1,11 +1,15 @@
 var http = {};
 http.get = function(url, fn, data_type) {
-	if (data_type == "") {
+	var apptoken = "";
+	if(typeof MalltodoApp != "undefined"){
+		apptoken = MalltodoApp.get_app_token();
+	}
+	if (data_type == "" || data_type == undefined) {
 		data_type = "json";
 	}
 	$.ajax({
 		headers: {
-			'APPTOKEN': '',
+			'APPTOKEN': apptoken,
 		},
 		async: true,
 		type: "GET",
@@ -21,12 +25,16 @@ http.get = function(url, fn, data_type) {
 }
 
 http.post = function(url, post_data, fn, data_type) {
-	if (data_type == "") {
+	var apptoken = "";
+	if(typeof MalltodoApp != "undefined"){
+		apptoken = MalltodoApp.get_app_token();
+	}
+	if (data_type == "" || data_type == undefined) {
 		data_type = "json";
 	}
 	$.ajax({
 		headers: {
-			'APPTOKEN': '',
+			'APPTOKEN': apptoken,
 		},
 		async: true,
 		type: "POST",

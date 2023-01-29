@@ -10,52 +10,56 @@
  * ============================================================================
  * 郑州掌勺信息技术有限公司 2021-09-01
  * 业务电话：13598851835（微信同号） 
- */
+ */ 
 package common.database;
-
 import java.util.HashMap;
 import java.util.Map;
-
 import com.alibaba.fastjson.JSONObject;
-
+import com.javatodo.core.tools.T;
 import common.Common;
-
 public class AGREEMENT {
 	public static String _table_name = "agreement";
 	public static String id = "id";
 	public static String agreement = "agreement";
-	public Map<String, Object> map = new HashMap<>();
-
-	public AGREEMENT() {
-		map.put("agreement", "");
-	}
-
-	public JSONObject check_add(Map<String, Object> data) {
-		for (String key : data.keySet()) {
-			if (map.containsKey(key)) {
-				if (key.equals("agreement")) {
-					if (data.get(key).toString().length() > 65535) {
-						return Common.error("注册协议最长65535个字符");
-					}
-				}
-				this.map.put(key, data.get(key));
-			}
-		}
-		return Common.success(this.map);
-	}
-
-	public JSONObject check_edit(Map<String, Object> data) {
-		Map<String, Object> new_data = new HashMap<>();
-		for (String key : data.keySet()) {
-			if (map.containsKey(key)) {
-				if (key.equals("agreement")) {
-					if (data.get(key).toString().length() > 65535) {
-						return Common.error("注册协议最长65535个字符");
-					}
-				}
-				new_data.put(key, data.get(key));
-			}
-		}
-		return Common.success(new_data);
-	}
+public Map<String, Object> map = new HashMap<>();
+public AGREEMENT() {
+map.put("id", "");
+map.put("agreement", "");
+}
+public JSONObject check_add(Map<String, Object> data) {
+for (String key : data.keySet()) {
+if (map.containsKey(key)) {
+if (key.equals("id")) {
+if (data.get(key).toString().length() > 25) {
+return Common.error("id最长25个字符");
+}
+}
+if (key.equals("agreement")) {
+if (data.get(key).toString().length() > 65535) {
+return Common.error("注册协议最长65535个字符");
+}
+}
+this.map.put(key, data.get(key));
+}
+}
+return Common.success(this.map);
+}
+public JSONObject check_edit(Map<String, Object> data) {
+Map<String, Object> new_data = new HashMap<>();for (String key : data.keySet()) {
+if (map.containsKey(key)) {
+if (key.equals("id")) {
+if (data.get(key).toString().length() > 25) {
+return Common.error("id最长25个字符");
+}
+}
+if (key.equals("agreement")) {
+if (data.get(key).toString().length() > 65535) {
+return Common.error("注册协议最长65535个字符");
+}
+}
+new_data.put(key, data.get(key));
+}
+}
+return Common.success(new_data);
+}
 }

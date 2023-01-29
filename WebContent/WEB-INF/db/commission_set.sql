@@ -1,5 +1,5 @@
 CREATE TABLE `javatodo_commission_set` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` char(25) NOT NULL DEFAULT '',
   `level_1` decimal(7,4) NOT NULL,
   `level_2` decimal(7,4) NOT NULL,
   `level_3` decimal(7,4) NOT NULL,

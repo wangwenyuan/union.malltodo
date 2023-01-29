@@ -5,8 +5,8 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>程序安装-MALLTODO电商联盟系统 V1.0</title>
-    <script type="text/javascript" src="<%=request.getAttribute("PUBLIC") %>/js/jquery-1.9.1.js"></script>
+    <title>程序安装-MALLTODO智慧点餐系统 V1.0</title>
+    <script type="text/javascript" src="<%=request.getAttribute("PUBLIC") %>/js/jquery-1.12.4.min.js"></script>
     <script type="text/javascript" src="<%=request.getAttribute("PUBLIC") %>/js/layer.js"></script>
     <script>
         if (window.top != window) {
@@ -160,7 +160,7 @@
 
     <div class="install_text">
         <p>版权所有 (R) MALLTODO 保留所有权利。 </p>
-				<p>感谢您选择MALLTODO电商联盟系统（以下简称MALLTODO），MALLTODO由郑州掌勺信息技术有限公司开发，是目前国内强大、稳定的导购返利类网站建设解决方案之一，基于 JAVA + MySQL   的技术开发，全部源码开放。</p>
+				<p>感谢您选择MALLTODO智慧点餐系统（以下简称MALLTODO），MALLTODO由郑州掌勺信息技术有限公司开发，是目前国内强大、稳定的点餐类系统建设解决方案之一，基于 JAVA + MySQL   的技术开发，全部源码开放。</p>
 				<p>MALLTODO 的官方网址是： <a href="http://www.malltodo.com" target="_blank">www.malltodo.com</a></p>
 				<p>为了使你正确并合法的使用本软件，请你在使用前务必阅读清楚下面的协议条款：</p>
 			<strong>一、本授权协议适用且仅适用于 MALLTODO V1.x 版本，MALLTODO官方对本授权协议的最终解释权。</strong>
@@ -211,7 +211,7 @@
     //登录提交
     $('#tijiao').click(function () {
         if($("#xieyi").prop("checked")){
-        	window.location.href = "<%=T.U("Index/Index/second", "index.jsp") %>";
+        	window.location.href = "<%=T.U("Index/Index/second", "index.jsp", request) %>";
         }else{
         	layer.msg("您必须同意软件许可协议才能安装！")
         	return ;

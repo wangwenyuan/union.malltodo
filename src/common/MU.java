@@ -22,6 +22,8 @@ import com.javatodo.core.model.M;
 public class MU extends M {
 	private String table_name = "";
 
+	private String id = "";
+
 	public MU() {
 		super();
 	}
@@ -45,14 +47,31 @@ public class MU extends M {
 	public MU data(Map<String, Object> data) {
 		JSONObject ret = TableData.checkAddData(table_name, data);
 		data = ret.getJSONObject("info").getInnerMap();
+		if (!data.containsKey("id") || data.get("id").toString().trim().equals("")) {
+			String _id = Functions.createPriKey();
+			data.put("id", _id);
+			this.id = _id;
+		} else {
+			this.id = data.get("id").toString().trim();
+		}
 		super.data(data);
 		return this;
+	}
+
+	public Object add() throws SQLException {
+		super.add();
+		return this.id;
 	}
 
 	public Integer save(Map<String, Object> data) throws SQLException {
 		JSONObject ret = TableData.checkEditData(table_name, data);
 		data = ret.getJSONObject("info").getInnerMap();
-		super.data(data);
-		return super.save(data);
+		if (data.size() > 0) {
+			super.data(data);
+			return super.save(data);
+		} else {
+			super.clear();
+			return 0;
+		}
 	}
 }

@@ -1,5 +1,5 @@
 CREATE TABLE `javatodo_goods` (
-  `goods_id` varchar(25) NOT NULL ,
+  `goods_id` char(25) NOT NULL ,
   `goods_name` varchar(255) NOT NULL ,
   `goods_pic` varchar(255) NOT NULL ,
   `goods_sign` varchar(99) NOT NULL ,

@@ -1,5 +1,5 @@
 CREATE TABLE `javatodo_alisms` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` char(25) NOT NULL DEFAULT '',
   `alisms_signname` varchar(99) NOT NULL ,
   `alisms_access_key_id` varchar(99) NOT NULL,
   `alisms_access_key_secret` varchar(99) NOT NULL,

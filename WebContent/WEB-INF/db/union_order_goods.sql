@@ -1,5 +1,5 @@
 CREATE TABLE `javatodo_union_order_goods` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` char(25) NOT NULL DEFAULT '',
   `order_sn` varchar(99) NOT NULL,
   `type` varchar(25) NOT NULL DEFAULT '',
   `goods_id` varchar(32) NOT NULL,

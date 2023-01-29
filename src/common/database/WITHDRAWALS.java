@@ -10,17 +10,13 @@
  * ============================================================================
  * 郑州掌勺信息技术有限公司 2021-09-01
  * 业务电话：13598851835（微信同号） 
- */
+ */ 
 package common.database;
-
 import java.util.HashMap;
 import java.util.Map;
-
 import com.alibaba.fastjson.JSONObject;
 import com.javatodo.core.tools.T;
-
 import common.Common;
-
 public class WITHDRAWALS {
 	public static String _table_name = "withdrawals";
 	public static String id = "id";
@@ -32,145 +28,134 @@ public class WITHDRAWALS {
 	public static String serial_number = "serial_number";
 	public static String addtime = "addtime";
 	public static String examine_time = "examine_time";
-	public Map<String, Object> map = new HashMap<>();
-
-	public WITHDRAWALS() {
-		map.put("uid", 0);
-		map.put("money", 0);
-		map.put("examine_admin_id", 0);
-		map.put("examine_status", "0");
-		map.put("no_pass_reason", "");
-		map.put("serial_number", "");
-		map.put("addtime", 0);
-		map.put("examine_time", 0);
-	}
-
-	public JSONObject check_add(Map<String, Object> data) {
-		for (String key : data.keySet()) {
-			if (map.containsKey(key)) {
-				if (key.equals("uid")) {
-					if (T.toInt(data.get(key).toString()) > 2147483647) {
-						return Common.error("uid最大值2147483647");
-					}
-					if (data.get(key) == null || data.get(key).toString().trim().equals("")) {
-						data.put(key, 0);
-					}
-				}
-				if (key.equals("money")) {
-					if (T.toInt(data.get(key).toString()) > 2147483647) {
-						return Common.error("提现金额最大值2147483647");
-					}
-					if (data.get(key) == null || data.get(key).toString().trim().equals("")) {
-						data.put(key, 0);
-					}
-				}
-				if (key.equals("examine_admin_id")) {
-					if (T.toInt(data.get(key).toString()) > 2147483647) {
-						return Common.error("执行审核的管理员id最大值2147483647");
-					}
-					if (data.get(key) == null || data.get(key).toString().trim().equals("")) {
-						data.put(key, 0);
-					}
-				}
-				if (key.equals("examine_status")) {
-					if (data.get(key).toString().length() > 255) {
-						return Common.error("审核状态 1 审核通过 0 未审核 -1 审核不通过最长255个字符");
-					}
-				}
-				if (key.equals("no_pass_reason")) {
-					if (data.get(key).toString().length() > 255) {
-						return Common.error("审核不通过原因最长255个字符");
-					}
-				}
-				if (key.equals("serial_number")) {
-					if (data.get(key).toString().length() > 255) {
-						return Common.error("支付流水号最长255个字符");
-					}
-				}
-				if (key.equals("addtime")) {
-					if (T.toInt(data.get(key).toString()) > 2147483647) {
-						return Common.error("addtime最大值2147483647");
-					}
-					if (data.get(key) == null || data.get(key).toString().trim().equals("")) {
-						data.put(key, 0);
-					}
-				}
-				if (key.equals("examine_time")) {
-					if (T.toInt(data.get(key).toString()) > 2147483647) {
-						return Common.error("examine_time最大值2147483647");
-					}
-					if (data.get(key) == null || data.get(key).toString().trim().equals("")) {
-						data.put(key, 0);
-					}
-				}
-				this.map.put(key, data.get(key));
-			}
-		}
-		return Common.success(this.map);
-	}
-
-	public JSONObject check_edit(Map<String, Object> data) {
-		Map<String, Object> new_data = new HashMap<>();
-		for (String key : data.keySet()) {
-			if (map.containsKey(key)) {
-				if (key.equals("uid")) {
-					if (T.toInt(data.get(key).toString()) > 2147483647) {
-						return Common.error("uid最大值2147483647");
-					}
-					if (data.get(key) == null || data.get(key).toString().trim().equals("")) {
-						data.put(key, 0);
-					}
-				}
-				if (key.equals("money")) {
-					if (T.toInt(data.get(key).toString()) > 2147483647) {
-						return Common.error("提现金额最大值2147483647");
-					}
-					if (data.get(key) == null || data.get(key).toString().trim().equals("")) {
-						data.put(key, 0);
-					}
-				}
-				if (key.equals("examine_admin_id")) {
-					if (T.toInt(data.get(key).toString()) > 2147483647) {
-						return Common.error("执行审核的管理员id最大值2147483647");
-					}
-					if (data.get(key) == null || data.get(key).toString().trim().equals("")) {
-						data.put(key, 0);
-					}
-				}
-				if (key.equals("examine_status")) {
-					if (data.get(key).toString().length() > 255) {
-						return Common.error("审核状态 1 审核通过 0 未审核 -1 审核不通过最长255个字符");
-					}
-				}
-				if (key.equals("no_pass_reason")) {
-					if (data.get(key).toString().length() > 255) {
-						return Common.error("审核不通过原因最长255个字符");
-					}
-				}
-				if (key.equals("serial_number")) {
-					if (data.get(key).toString().length() > 255) {
-						return Common.error("支付流水号最长255个字符");
-					}
-				}
-				if (key.equals("addtime")) {
-					if (T.toInt(data.get(key).toString()) > 2147483647) {
-						return Common.error("addtime最大值2147483647");
-					}
-					if (data.get(key) == null || data.get(key).toString().trim().equals("")) {
-						data.put(key, 0);
-					}
-				}
-				if (key.equals("examine_time")) {
-					if (T.toInt(data.get(key).toString()) > 2147483647) {
-						return Common.error("examine_time最大值2147483647");
-					}
-					if (data.get(key) == null || data.get(key).toString().trim().equals("")) {
-						data.put(key, 0);
-					}
-				}
-				new_data.put(key, data.get(key));
-			}
-		}
-		return Common.success(new_data);
-	}
+public Map<String, Object> map = new HashMap<>();
+public WITHDRAWALS() {
+map.put("id", "");
+map.put("uid", "");
+map.put("money", 0);
+map.put("examine_admin_id", "");
+map.put("examine_status", "0");
+map.put("no_pass_reason", "");
+map.put("serial_number", "");
+map.put("addtime", 0);
+map.put("examine_time", 0);
+}
+public JSONObject check_add(Map<String, Object> data) {
+for (String key : data.keySet()) {
+if (map.containsKey(key)) {
+if (key.equals("id")) {
+if (data.get(key).toString().length() > 25) {
+return Common.error("id最长25个字符");
+}
+}
+if (key.equals("uid")) {
+if (data.get(key).toString().length() > 25) {
+return Common.error("uid最长25个字符");
+}
+}
+if (key.equals("money")) {
+if (T.toInt(data.get(key).toString()) > 2147483647) {
+return Common.error("提现金额最大值2147483647");}
+if (data.get(key) == null || data.get(key).toString().trim().equals("")) {
+data.put(key, 0);
+}
+}
+if (key.equals("examine_admin_id")) {
+if (data.get(key).toString().length() > 25) {
+return Common.error("执行审核的管理员id最长25个字符");
+}
+}
+if (key.equals("examine_status")) {
+if (data.get(key).toString().length() > 255) {
+return Common.error("审核状态 1 审核通过 0 未审核 -1 审核不通过最长255个字符");
+}
+}
+if (key.equals("no_pass_reason")) {
+if (data.get(key).toString().length() > 255) {
+return Common.error("审核不通过原因最长255个字符");
+}
+}
+if (key.equals("serial_number")) {
+if (data.get(key).toString().length() > 255) {
+return Common.error("支付流水号最长255个字符");
+}
+}
+if (key.equals("addtime")) {
+if (T.toInt(data.get(key).toString()) > 2147483647) {
+return Common.error("addtime最大值2147483647");}
+if (data.get(key) == null || data.get(key).toString().trim().equals("")) {
+data.put(key, 0);
+}
+}
+if (key.equals("examine_time")) {
+if (T.toInt(data.get(key).toString()) > 2147483647) {
+return Common.error("examine_time最大值2147483647");}
+if (data.get(key) == null || data.get(key).toString().trim().equals("")) {
+data.put(key, 0);
+}
+}
+this.map.put(key, data.get(key));
+}
+}
+return Common.success(this.map);
+}
+public JSONObject check_edit(Map<String, Object> data) {
+Map<String, Object> new_data = new HashMap<>();for (String key : data.keySet()) {
+if (map.containsKey(key)) {
+if (key.equals("id")) {
+if (data.get(key).toString().length() > 25) {
+return Common.error("id最长25个字符");
+}
+}
+if (key.equals("uid")) {
+if (data.get(key).toString().length() > 25) {
+return Common.error("uid最长25个字符");
+}
+}
+if (key.equals("money")) {
+if (T.toInt(data.get(key).toString()) > 2147483647) {
+return Common.error("提现金额最大值2147483647");}
+if (data.get(key) == null || data.get(key).toString().trim().equals("")) {
+data.put(key, 0);
+}
+}
+if (key.equals("examine_admin_id")) {
+if (data.get(key).toString().length() > 25) {
+return Common.error("执行审核的管理员id最长25个字符");
+}
+}
+if (key.equals("examine_status")) {
+if (data.get(key).toString().length() > 255) {
+return Common.error("审核状态 1 审核通过 0 未审核 -1 审核不通过最长255个字符");
+}
+}
+if (key.equals("no_pass_reason")) {
+if (data.get(key).toString().length() > 255) {
+return Common.error("审核不通过原因最长255个字符");
+}
+}
+if (key.equals("serial_number")) {
+if (data.get(key).toString().length() > 255) {
+return Common.error("支付流水号最长255个字符");
+}
+}
+if (key.equals("addtime")) {
+if (T.toInt(data.get(key).toString()) > 2147483647) {
+return Common.error("addtime最大值2147483647");}
+if (data.get(key) == null || data.get(key).toString().trim().equals("")) {
+data.put(key, 0);
+}
+}
+if (key.equals("examine_time")) {
+if (T.toInt(data.get(key).toString()) > 2147483647) {
+return Common.error("examine_time最大值2147483647");}
+if (data.get(key) == null || data.get(key).toString().trim().equals("")) {
+data.put(key, 0);
+}
+}
+new_data.put(key, data.get(key));
+}
+}
+return Common.success(new_data);
+}
 }

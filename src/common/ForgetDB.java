@@ -78,6 +78,6 @@ public class ForgetDB {
 		/* 忘记数据库用户名密码时可执行下面的方法进行查看 */ // 注：数据库配置文件的默认路径是："项目目录/WEB-INF/config/db.property"
 		// ForgetDB.getDBConfig("数据库配置文件路径");
 		/* 当数据库用户名密码等信息修改时执行下面的方法 */ // 注：该方法在项目根目录生成一个新的db.property文件，然后使用该文件替换原来的db.property文件
-		// createNewDBConfig("新的数据地址", "新的数据库端口", "新的收据库名称", "新的数据库用户名", "新的数据库密码");
+		createNewDBConfig("127.0.0.1", "3306", "db_name", "db_username", "db_password");
 	}
 }

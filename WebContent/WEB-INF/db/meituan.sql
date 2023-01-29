@@ -1,5 +1,5 @@
 CREATE TABLE `javatodo_meituan` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` char(25) NOT NULL DEFAULT '',
   `app_key` varchar(99) NOT NULL DEFAULT '',
   `app_secret` varchar(99) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)

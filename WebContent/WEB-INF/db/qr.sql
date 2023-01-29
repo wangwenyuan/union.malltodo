@@ -1,5 +1,5 @@
 CREATE TABLE `javatodo_qr` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` char(25) NOT NULL DEFAULT '',
   `bgimg` varchar(255) NOT NULL,
   `bgimg_width` int(11) NOT NULL,
   `bgimg_height` int(11) NOT NULL,

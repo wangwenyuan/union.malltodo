@@ -26,7 +26,6 @@ import com.google.zxing.WriterException;
 import com.javatodo.core.controller.Controller;
 import com.javatodo.core.tools.T;
 
-import common.Functions;
 import common.MU;
 import common.database.QR;
 import freemarker.template.TemplateException;
@@ -34,9 +33,9 @@ import freemarker.template.TemplateException;
 public class QrController extends Controller {
 	public void indexPage() throws SQLException, IOException, ServletException, TemplateException {
 		if (I("pid").equals("")) {
-			redirect(T.U("Index/Qr/poster", "pid=" + session("uid"), "index.jsp"));
+			redirect(T.U("Index/Qr/poster", "pid=" + session("uid"), "index.jsp", request));
 		} else {
-			redirect(T.U("Index/Qr/poster", "pid=" + I("pid"), "index.jsp"));
+			redirect(T.U("Index/Qr/poster", "pid=" + I("pid"), "index.jsp", request));
 		}
 		return;
 	}
@@ -45,7 +44,7 @@ public class QrController extends Controller {
 		Map<String, Object> info = new MU(QR._table_name).order(QR.id + " desc").find();
 		if (info == null) {
 			info = new HashMap<>();
-			info.put(QR.bgimg, Functions.getRootUrl(request) + "/Public/images/poster.jpg");
+			info.put(QR.bgimg, T.getRootUrl(request) + "/Public/images/poster.jpg");
 			info.put(QR.bgimg_width, 304);
 			info.put(QR.bgimg_height, 456);
 			info.put(QR.qrimg_width, 120);
@@ -53,7 +52,7 @@ public class QrController extends Controller {
 			info.put(QR.qrimg_left, 92);
 			info.put(QR.qrimg_top, 250);
 		}
-		info.put("qrcode", T.U("Index/Qr/qrcode", "pid=" + I("pid"), "index.jsp"));
+		info.put("qrcode", T.U("Index/Qr/qrcode", "pid=" + I("pid"), "index.jsp", request));
 		this.assign("info", JSONObject.parse(JSON.toJSONString(info)));
 		this.display();
 	}
@@ -64,6 +63,6 @@ public class QrController extends Controller {
 		response.setHeader("Cache-Control", "no-cache");
 		response.setDateHeader("Expires", 0);
 		String pid = I("pid");
-		com.javatodo.core.tools.QR.EncodeToStream(Functions.getRootUrl(request) + "?pid=" + pid, response.getOutputStream());
+		com.javatodo.core.tools.QR.EncodeToStream(T.getRootUrl(request) + "?pid=" + pid, response.getOutputStream());
 	}
 }

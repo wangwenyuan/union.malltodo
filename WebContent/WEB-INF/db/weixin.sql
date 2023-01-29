@@ -1,5 +1,5 @@
 CREATE TABLE `javatodo_weixin` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` char(25) NOT NULL DEFAULT '',
   `appid` varchar(99) NOT NULL,
   `appsecret` varchar(99) NOT NULL,
   `mchid` varchar(255) NOT NULL DEFAULT '' ,

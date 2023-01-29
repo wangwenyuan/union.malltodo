@@ -1,3 +1,4 @@
+<%@page import="common.Functions"%>
 <%@page import="common.database.QR"%>
 <%@page import="com.javatodo.core.tools.T"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
@@ -11,8 +12,7 @@
 		<title>MALLTODO</title>
 		<meta name="keywords" content="MALLTODO，MALLTODO联盟">
 		<meta name="description" content="MALLTODO是由郑州掌勺信息技术有限公司开发的一套导购类商城系统">
-		<script src="/Public/js/jquery.js"></script>
-		<script src="/Public/js/js.js"></script>
+		<%=Functions.header(T.getHost(request)) %>
 		<style>
 			body {
 				margin: 0rem;

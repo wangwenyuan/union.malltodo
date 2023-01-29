@@ -16,6 +16,7 @@ package common;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpServlet;
@@ -63,6 +64,8 @@ public class Common {
 
 	public static Template template = null;
 
+	public static boolean hasMobile = false;
+
 	public static void Init(String config_file_path) {
 		_init(config_file_path);
 	}
@@ -71,9 +74,6 @@ public class Common {
 		_init(servlet.getServletContext().getRealPath("/") + "WEB-INF/config/db.property");
 		if (template == null && request != null && servlet != null) {
 			template = new Template(request, servlet);
-			if (!Common.template.getClassName().equals("common.Widget")) {
-				Common.unionHost = "http://ceshi.union.malltodo.com";
-			}
 		}
 	}
 
@@ -128,6 +128,81 @@ public class Common {
 		}
 		new RC("Index", "index");
 	}
+
+	public static Map<String, String> home_menu = new LinkedHashMap<String, String>() {
+		{
+			put("Index/Index/index", "首页");
+			put("Index/News/index", "新闻中心");
+			put("Index/Product/index", "产品中心");
+			put("Index/Brief/index", "公司简介");
+			put("Index/Business/index", "业务范围");
+			put("Index/Case/index", "应用案例");
+			put("Index/Album/index", "公司相册");
+			put("Index/Message/index", "客户留言");
+			put("Index/Job/index", "人力招聘");
+			put("Index/ContactUs/index", "联系我们");
+			put("Index/Category/index", "其他栏目");
+		}
+	};
+
+	public static Map<String, String> order_dish_menu = new LinkedHashMap<String, String>() {
+		{
+			put("Index/Index/index", "点餐首页");
+			put("Index/Foods/index", "菜品列表");
+			put("Index/Cart/index", "购物车");
+			put("Index/User/index", "会员中心");
+			put("Index/Order/index", "订单中心");
+			put("Index/Coupon/index", "我的优惠券");
+			put("Index/CouponCenter/index", "领券中心");
+			put("Index/Set/index", "会员信息设置");
+			put("Index/MoneyLog/index", "资金记录");
+		}
+	};
+
+	public static JSONObject detail_recommend_level_json = new JSONObject(new LinkedHashMap<String, Object>()) {
+		{
+			put("0", "不推荐");
+			put("1", "一级推荐");
+			put("2", "二级推荐");
+			put("3", "三级推荐");
+			put("4", "四级推荐");
+			put("5", "五级推荐");
+			put("6", "六级推荐");
+			put("7", "七级推荐");
+			put("8", "八级推荐");
+			put("9", "九级推荐");
+		}
+	};
+
+	// root_domain中必须是根域名，不能带有"www"
+	public static JSONObject root_domain = new JSONObject(new LinkedHashMap<>()) {
+		{
+			put("malltodo.com", new JSONObject(new LinkedHashMap<String, Object>()) {
+				{
+					put("api_key", "nSHclRr6omJ5f4hZIDIyu8ZUHM1A4Z7j");
+					put("url", "http://127.0.0.1:8888/");
+					put("sourceApplication", "/malltodo");
+					put("master_domain", "www.malltodo.com");
+				}
+			});
+			put("xn--c-qq1dw6c.cn", new JSONObject(new LinkedHashMap<String, Object>()) {
+				{
+					put("api_key", "TEG2B6JoZ4yx0ybePPcSCpmOt2DKA1dt");
+					put("url", "http://127.0.0.1:8888/");
+					put("sourceApplication", "/malltodo");
+					put("master_domain", "malltodo.xn--c-qq1dw6c.cn");
+				}
+			});
+			put("127.0.0.1", new JSONObject(new LinkedHashMap<String, Object>()) {
+				{
+					put("api_key", "TEG2B6JoZ4yx0ybePPcSCpmOt2DKA1dt");
+					put("url", "http://malltodo.xn--c-qq1dw6c.cn:8888/");
+					put("sourceApplication", "/malltodo");
+					put("master_domain", "127.0.0.1");
+				}
+			});
+		}
+	};
 
 	public static JSONObject success(Object object) {
 		Map<String, Object> map = new HashMap<>();

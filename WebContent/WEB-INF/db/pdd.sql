@@ -1,5 +1,5 @@
 CREATE TABLE `javatodo_pdd` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` char(25) NOT NULL DEFAULT '',
   `client_id` varchar(255) NOT NULL,
   `client_secret` varchar(255) NOT NULL,
   `pid` varchar(99) NOT NULL,

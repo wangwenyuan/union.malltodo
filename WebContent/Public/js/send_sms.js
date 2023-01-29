@@ -1,4 +1,3 @@
-//发送注册短信
 var send_sms_anniu_val=0;
 var send_sms_timer;
 var send_sms_times=0;

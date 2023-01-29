@@ -1,6 +1,6 @@
 CREATE TABLE `javatodo_weixin_member` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `uid` int(11) NOT NULL,
+  `id` char(25) NOT NULL DEFAULT '',
+  `uid` char(25) NOT NULL,
   `openid` varchar(99) NOT NULL,
   `unionid` varchar(99) NOT NULL,
   `sex` varchar(25) NOT NULL,

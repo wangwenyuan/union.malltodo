@@ -1,3 +1,4 @@
+<%@page import="common.Functions"%>
 <%@page import="com.javatodo.core.router.RC"%>
 <%@page import="java.io.File"%>
 <%@page import="common.Common"%>
@@ -8,7 +9,7 @@
 File file = new File(this.getServletContext().getRealPath("/")+ "WEB-INF/Runtime/lock");
 JavaTodo javaTodo = null;
 if(file.exists()){
-	javaTodo = new JavaTodo("admin");
+	javaTodo = new JavaTodo("admin.home");
 	Common.Init(request, this);
 }else{
 	javaTodo=new JavaTodo("install");

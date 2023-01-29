@@ -1,16 +1,21 @@
 CREATE TABLE `javatodo_renovation` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` char(25) NOT NULL DEFAULT '',
+  `website_id` char(25) NOT NULL DEFAULT '',
   `name` varchar(99) NOT NULL DEFAULT '' ,
   `title` varchar(99) NOT NULL DEFAULT '',
   `keywords` varchar(255) NOT NULL DEFAULT '',
   `description` varchar(255) NOT NULL DEFAULT '',
   `page_pic` varchar(255) NOT NULL DEFAULT '',
   `background_color` varchar(25) NOT NULL DEFAULT '',
+  `background_image` varchar(255) NOT NULL DEFAULT '',
+  `background_repeat` varchar(25) NOT NULL DEFAULT '',
   `type` varchar(25) NOT NULL DEFAULT '' ,
+  `platform` varchar(25) NOT NULL ,
   `html` mediumtext NOT NULL ,
   `doms` mediumtext NOT NULL ,
   `doms_sort` mediumtext NOT NULL ,
-  `bottom_id` int(11) NOT NULL DEFAULT '0' ,
+  `header_id` char(25) NOT NULL DEFAULT '',
+  `bottom_id` char(25) NOT NULL DEFAULT '' ,
   `is_list` tinyint(4) NOT NULL DEFAULT '0' ,
   `list_dom` mediumtext NOT NULL ,
   `list_html` mediumtext NOT NULL ,
@@ -18,5 +23,6 @@ CREATE TABLE `javatodo_renovation` (
   `addtime` bigint(20) NOT NULL DEFAULT '0' ,
   `last_edit_time` bigint(20) NOT NULL DEFAULT '0' ,
   `is_del` tinyint(4) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `website_id` (`website_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4

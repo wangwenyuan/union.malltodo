@@ -10,17 +10,13 @@
  * ============================================================================
  * 郑州掌勺信息技术有限公司 2021-09-01
  * 业务电话：13598851835（微信同号） 
- */
+ */ 
 package common.database;
-
 import java.util.HashMap;
 import java.util.Map;
-
 import com.alibaba.fastjson.JSONObject;
 import com.javatodo.core.tools.T;
-
 import common.Common;
-
 public class QR {
 	public static String _table_name = "qr";
 	public static String id = "id";
@@ -31,140 +27,135 @@ public class QR {
 	public static String qrimg_height = "qrimg_height";
 	public static String qrimg_left = "qrimg_left";
 	public static String qrimg_top = "qrimg_top";
-	public Map<String, Object> map = new HashMap<>();
-
-	public QR() {
-		map.put("bgimg", "");
-		map.put("bgimg_width", 0);
-		map.put("bgimg_height", 0);
-		map.put("qrimg_width", 0);
-		map.put("qrimg_height", 0);
-		map.put("qrimg_left", 0);
-		map.put("qrimg_top", 0);
-	}
-
-	public JSONObject check_add(Map<String, Object> data) {
-		for (String key : data.keySet()) {
-			if (map.containsKey(key)) {
-				if (key.equals("bgimg")) {
-					if (data.get(key).toString().length() > 255) {
-						return Common.error("bgimg最长255个字符");
-					}
-				}
-				if (key.equals("bgimg_width")) {
-					if (T.toInt(data.get(key).toString()) > 2147483647) {
-						return Common.error("bgimg_width最大值2147483647");
-					}
-					if (data.get(key) == null || data.get(key).toString().trim().equals("")) {
-						data.put(key, 0);
-					}
-				}
-				if (key.equals("bgimg_height")) {
-					if (T.toInt(data.get(key).toString()) > 2147483647) {
-						return Common.error("bgimg_height最大值2147483647");
-					}
-					if (data.get(key) == null || data.get(key).toString().trim().equals("")) {
-						data.put(key, 0);
-					}
-				}
-				if (key.equals("qrimg_width")) {
-					if (T.toInt(data.get(key).toString()) > 2147483647) {
-						return Common.error("qrimg_width最大值2147483647");
-					}
-					if (data.get(key) == null || data.get(key).toString().trim().equals("")) {
-						data.put(key, 0);
-					}
-				}
-				if (key.equals("qrimg_height")) {
-					if (T.toInt(data.get(key).toString()) > 2147483647) {
-						return Common.error("qrimg_height最大值2147483647");
-					}
-					if (data.get(key) == null || data.get(key).toString().trim().equals("")) {
-						data.put(key, 0);
-					}
-				}
-				if (key.equals("qrimg_left")) {
-					if (T.toInt(data.get(key).toString()) > 2147483647) {
-						return Common.error("qrimg_left最大值2147483647");
-					}
-					if (data.get(key) == null || data.get(key).toString().trim().equals("")) {
-						data.put(key, 0);
-					}
-				}
-				if (key.equals("qrimg_top")) {
-					if (T.toInt(data.get(key).toString()) > 2147483647) {
-						return Common.error("qrimg_top最大值2147483647");
-					}
-					if (data.get(key) == null || data.get(key).toString().trim().equals("")) {
-						data.put(key, 0);
-					}
-				}
-				this.map.put(key, data.get(key));
-			}
-		}
-		return Common.success(this.map);
-	}
-
-	public JSONObject check_edit(Map<String, Object> data) {
-		Map<String, Object> new_data = new HashMap<>();
-		for (String key : data.keySet()) {
-			if (map.containsKey(key)) {
-				if (key.equals("bgimg")) {
-					if (data.get(key).toString().length() > 255) {
-						return Common.error("bgimg最长255个字符");
-					}
-				}
-				if (key.equals("bgimg_width")) {
-					if (T.toInt(data.get(key).toString()) > 2147483647) {
-						return Common.error("bgimg_width最大值2147483647");
-					}
-					if (data.get(key) == null || data.get(key).toString().trim().equals("")) {
-						data.put(key, 0);
-					}
-				}
-				if (key.equals("bgimg_height")) {
-					if (T.toInt(data.get(key).toString()) > 2147483647) {
-						return Common.error("bgimg_height最大值2147483647");
-					}
-					if (data.get(key) == null || data.get(key).toString().trim().equals("")) {
-						data.put(key, 0);
-					}
-				}
-				if (key.equals("qrimg_width")) {
-					if (T.toInt(data.get(key).toString()) > 2147483647) {
-						return Common.error("qrimg_width最大值2147483647");
-					}
-					if (data.get(key) == null || data.get(key).toString().trim().equals("")) {
-						data.put(key, 0);
-					}
-				}
-				if (key.equals("qrimg_height")) {
-					if (T.toInt(data.get(key).toString()) > 2147483647) {
-						return Common.error("qrimg_height最大值2147483647");
-					}
-					if (data.get(key) == null || data.get(key).toString().trim().equals("")) {
-						data.put(key, 0);
-					}
-				}
-				if (key.equals("qrimg_left")) {
-					if (T.toInt(data.get(key).toString()) > 2147483647) {
-						return Common.error("qrimg_left最大值2147483647");
-					}
-					if (data.get(key) == null || data.get(key).toString().trim().equals("")) {
-						data.put(key, 0);
-					}
-				}
-				if (key.equals("qrimg_top")) {
-					if (T.toInt(data.get(key).toString()) > 2147483647) {
-						return Common.error("qrimg_top最大值2147483647");
-					}
-					if (data.get(key) == null || data.get(key).toString().trim().equals("")) {
-						data.put(key, 0);
-					}
-				}
-				new_data.put(key, data.get(key));
-			}
-		}
-		return Common.success(new_data);
-	}
+public Map<String, Object> map = new HashMap<>();
+public QR() {
+map.put("id", "");
+map.put("bgimg", "");
+map.put("bgimg_width", 0);
+map.put("bgimg_height", 0);
+map.put("qrimg_width", 0);
+map.put("qrimg_height", 0);
+map.put("qrimg_left", 0);
+map.put("qrimg_top", 0);
+}
+public JSONObject check_add(Map<String, Object> data) {
+for (String key : data.keySet()) {
+if (map.containsKey(key)) {
+if (key.equals("id")) {
+if (data.get(key).toString().length() > 25) {
+return Common.error("id最长25个字符");
+}
+}
+if (key.equals("bgimg")) {
+if (data.get(key).toString().length() > 255) {
+return Common.error("bgimg最长255个字符");
+}
+}
+if (key.equals("bgimg_width")) {
+if (T.toInt(data.get(key).toString()) > 2147483647) {
+return Common.error("bgimg_width最大值2147483647");}
+if (data.get(key) == null || data.get(key).toString().trim().equals("")) {
+data.put(key, 0);
+}
+}
+if (key.equals("bgimg_height")) {
+if (T.toInt(data.get(key).toString()) > 2147483647) {
+return Common.error("bgimg_height最大值2147483647");}
+if (data.get(key) == null || data.get(key).toString().trim().equals("")) {
+data.put(key, 0);
+}
+}
+if (key.equals("qrimg_width")) {
+if (T.toInt(data.get(key).toString()) > 2147483647) {
+return Common.error("qrimg_width最大值2147483647");}
+if (data.get(key) == null || data.get(key).toString().trim().equals("")) {
+data.put(key, 0);
+}
+}
+if (key.equals("qrimg_height")) {
+if (T.toInt(data.get(key).toString()) > 2147483647) {
+return Common.error("qrimg_height最大值2147483647");}
+if (data.get(key) == null || data.get(key).toString().trim().equals("")) {
+data.put(key, 0);
+}
+}
+if (key.equals("qrimg_left")) {
+if (T.toInt(data.get(key).toString()) > 2147483647) {
+return Common.error("qrimg_left最大值2147483647");}
+if (data.get(key) == null || data.get(key).toString().trim().equals("")) {
+data.put(key, 0);
+}
+}
+if (key.equals("qrimg_top")) {
+if (T.toInt(data.get(key).toString()) > 2147483647) {
+return Common.error("qrimg_top最大值2147483647");}
+if (data.get(key) == null || data.get(key).toString().trim().equals("")) {
+data.put(key, 0);
+}
+}
+this.map.put(key, data.get(key));
+}
+}
+return Common.success(this.map);
+}
+public JSONObject check_edit(Map<String, Object> data) {
+Map<String, Object> new_data = new HashMap<>();for (String key : data.keySet()) {
+if (map.containsKey(key)) {
+if (key.equals("id")) {
+if (data.get(key).toString().length() > 25) {
+return Common.error("id最长25个字符");
+}
+}
+if (key.equals("bgimg")) {
+if (data.get(key).toString().length() > 255) {
+return Common.error("bgimg最长255个字符");
+}
+}
+if (key.equals("bgimg_width")) {
+if (T.toInt(data.get(key).toString()) > 2147483647) {
+return Common.error("bgimg_width最大值2147483647");}
+if (data.get(key) == null || data.get(key).toString().trim().equals("")) {
+data.put(key, 0);
+}
+}
+if (key.equals("bgimg_height")) {
+if (T.toInt(data.get(key).toString()) > 2147483647) {
+return Common.error("bgimg_height最大值2147483647");}
+if (data.get(key) == null || data.get(key).toString().trim().equals("")) {
+data.put(key, 0);
+}
+}
+if (key.equals("qrimg_width")) {
+if (T.toInt(data.get(key).toString()) > 2147483647) {
+return Common.error("qrimg_width最大值2147483647");}
+if (data.get(key) == null || data.get(key).toString().trim().equals("")) {
+data.put(key, 0);
+}
+}
+if (key.equals("qrimg_height")) {
+if (T.toInt(data.get(key).toString()) > 2147483647) {
+return Common.error("qrimg_height最大值2147483647");}
+if (data.get(key) == null || data.get(key).toString().trim().equals("")) {
+data.put(key, 0);
+}
+}
+if (key.equals("qrimg_left")) {
+if (T.toInt(data.get(key).toString()) > 2147483647) {
+return Common.error("qrimg_left最大值2147483647");}
+if (data.get(key) == null || data.get(key).toString().trim().equals("")) {
+data.put(key, 0);
+}
+}
+if (key.equals("qrimg_top")) {
+if (T.toInt(data.get(key).toString()) > 2147483647) {
+return Common.error("qrimg_top最大值2147483647");}
+if (data.get(key) == null || data.get(key).toString().trim().equals("")) {
+data.put(key, 0);
+}
+}
+new_data.put(key, data.get(key));
+}
+}
+return Common.success(new_data);
+}
 }

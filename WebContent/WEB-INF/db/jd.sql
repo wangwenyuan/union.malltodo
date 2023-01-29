@@ -1,5 +1,5 @@
 CREATE TABLE `javatodo_jd` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id` char(25) NOT NULL DEFAULT '',
   `app_key` varchar(255) NOT NULL,
   `app_secret` varchar(255) NOT NULL,
   `site_id` varchar(99) NOT NULL ,

@@ -1,5 +1,9 @@
-//.ui-c-drag 需要拖动的元素
-//.ui-c-drag-region 元素的可拖动区域
+/*
+ * UI-C
+ * Copyright (c) 2022 http://ui-c.com All rights reserved.
+ * Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
+ * Author: wangwenyuan <827287829@qq.com>
+ */
 ui_c.build_drag_dom = function() {
 	function build(obj) {
 		if (obj.children('.ui-c-drag-box').length > 0) {

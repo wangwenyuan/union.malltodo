@@ -37,10 +37,12 @@ import common.database.FILE;
 
 public class Uploads extends Controller {
 	public void index() throws java.lang.Exception {
-		Integer admin_id = T.toInt(session("admin_id").toString());
-		Integer merchant_id = T.toInt(session("merchant_id").toString());
-		Integer uid = T.toInt(session("uid").toString());
-		if (admin_id == 0 && merchant_id == 0 && uid == 0) {
+		String admin_id = session("admin_id").toString().trim();
+		String store_id = session("store_id").toString().trim();
+		String uid = session("uid").toString().trim();
+		String agent_id = session("agent_id").toString().trim();
+		String merchant_id = session("merchant_id").toString().trim();
+		if (admin_id.equals("") && store_id.equals("") && uid.equals("") && agent_id.equals("") && merchant_id.equals("")) {
 			this.error("无权上传");
 			return;
 		}
@@ -51,14 +53,27 @@ public class Uploads extends Controller {
 		exts.add("png");
 		exts.add("jpeg");
 		exts.add("mp4");
+		exts.add("p12");
 		upload.extList = exts;
 		FileInfo fileInfo = upload.uploadOne("imgFile");
+
+		String pic_url = request.getScheme() + "://" + request.getServerName();
+		if (request.getServerPort() != 80 && request.getServerPort() != 443) {
+			pic_url = pic_url + ":" + request.getServerPort();
+		}
+		if (!request.getContextPath().equals("")) {
+			pic_url = pic_url + "/" + request.getContextPath();
+		}
+		pic_url = pic_url + "/";
+
 		if (upload.err_msg.equals("")) {
 			Map<String, Object> add_data = new HashMap<>();
 			add_data.put(FILE.admin_id, admin_id);
-			add_data.put(FILE.merchant_id, merchant_id);
+			add_data.put(FILE.store_id, store_id);
 			add_data.put(FILE.uid, uid);
-			add_data.put(FILE.url, fileInfo.savePath + fileInfo.savename);
+			add_data.put(FILE.agent_id, agent_id);
+			add_data.put(FILE.merchant_id, merchant_id);
+			add_data.put(FILE.url, pic_url + fileInfo.savePath + fileInfo.savename);
 			add_data.put(FILE.name, fileInfo.name);
 			add_data.put(FILE.ext, fileInfo.ext);
 			if (fileInfo.ext.equals("mp4")) {
@@ -70,7 +85,7 @@ public class Uploads extends Controller {
 			add_data.put(FILE.filesize, fileInfo.size);
 			new MU(FILE._table_name).data(add_data).add();
 			this.assign("error", 0);
-			this.assign("url", fileInfo.savePath + fileInfo.savename);
+			this.assign("url", pic_url + fileInfo.savePath + fileInfo.savename);
 			this.jsonDisplay();
 		} else {
 			this.error(upload.err_msg);
@@ -78,22 +93,30 @@ public class Uploads extends Controller {
 	}
 
 	public void manager() throws IOException, SQLException {
-		Integer admin_id = T.toInt(session("admin_id").toString());
-		Integer merchant_id = T.toInt(session("merchant_id").toString());
-		Integer uid = T.toInt(session("uid").toString());
-		if (admin_id == 0 && merchant_id == 0 && uid == 0) {
-			this.error("无权上传");
+		String admin_id = session("admin_id").toString().trim();
+		String store_id = session("store_id").toString().trim();
+		String uid = session("uid").toString().trim();
+		String agent_id = session("agent_id").toString().trim();
+		String merchant_id = session("merchant_id").toString().trim();
+		if (admin_id.equals("") && store_id.equals("") && uid.equals("") && agent_id.equals("") && merchant_id.equals("")) {
+			this.error("无权进入");
 			return;
 		}
 		Map<String, W> where = new HashMap<>();
-		if (admin_id != 0) {
+		if (!admin_id.equals("")) {
 			where.put(FILE.admin_id, new W("eq", admin_id));
 		}
-		if (merchant_id != 0) {
-			where.put(FILE.merchant_id, new W("eq", merchant_id));
+		if (!store_id.equals("")) {
+			where.put(FILE.store_id, new W("eq", store_id));
 		}
-		if (uid != 0) {
+		if (!uid.equals("")) {
 			where.put(FILE.uid, new W("eq", uid));
+		}
+		if (!agent_id.equals("")) {
+			where.put(FILE.agent_id, new W("eq", agent_id));
+		}
+		if (!merchant_id.equals("")) {
+			where.put(FILE.merchant_id, new W("eq", merchant_id));
 		}
 		List<Map<String, Object>> list = new MU(FILE._table_name).where(where).order(FILE.id + " desc").limit("0, 100").select();
 		JSONObject object = new JSONObject();
@@ -118,7 +141,16 @@ public class Uploads extends Controller {
 		this.jsonDisplay(object.toJSONString());
 	}
 
-	public void base64() {
+	public void base64() throws IOException {
+		String admin_id = session("admin_id").toString().trim();
+		String store_id = session("store_id").toString().trim();
+		String uid = session("uid").toString().trim();
+		String agent_id = session("agent_id").toString().trim();
+		String merchant_id = session("merchant_id").toString().trim();
+		if (admin_id.equals("") && store_id.equals("") && uid.equals("") && agent_id.equals("") && merchant_id.equals("")) {
+			this.error("无权上传");
+			return;
+		}
 		if (IS_POST) {
 			String base64 = I("base64");
 			String[] base64_arr = base64.split(";base64,");
@@ -132,6 +164,10 @@ public class Uploads extends Controller {
 				return;
 			}
 			String houzhui = tou_arr[1];
+			if (!(houzhui.equals("jpg") || houzhui.equals("jpeg") || houzhui.equals("gif") || houzhui.equals("png") || houzhui.equals("mp4"))) {
+				this.error("该文件不允许上传");
+				return;
+			}
 			String saveDir = servlet.getServletContext().getRealPath("/") + new Upload(servlet, request).savePath + "/" + T.now("yyyy/MM/dd") + "/";
 			File dir = new File(saveDir);
 			if (!dir.exists()) {
@@ -140,7 +176,7 @@ public class Uploads extends Controller {
 			String file_name = System.currentTimeMillis() + "." + houzhui;
 			String filePath = saveDir + file_name;
 			String pic_url = request.getScheme() + "://" + request.getServerName();
-			if (request.getServerPort() != 80) {
+			if (request.getServerPort() != 80 && request.getServerPort() != 443) {
 				pic_url = pic_url + ":" + request.getServerPort();
 			}
 			if (!request.getContextPath().equals("")) {
@@ -156,6 +192,25 @@ public class Uploads extends Controller {
 				fos = new FileOutputStream(file);
 				bos = new BufferedOutputStream(fos);
 				bos.write(bfile);
+
+				Map<String, Object> add_data = new HashMap<>();
+				add_data.put(FILE.admin_id, admin_id);
+				add_data.put(FILE.store_id, store_id);
+				add_data.put(FILE.uid, uid);
+				add_data.put(FILE.agent_id, agent_id);
+				add_data.put(FILE.merchant_id, merchant_id);
+				add_data.put(FILE.url, pic_url);
+				add_data.put(FILE.name, file_name);
+				add_data.put(FILE.ext, houzhui);
+				if (houzhui.equals("mp4")) {
+					add_data.put(FILE.show_pic, "Public/admin/images/video_play.png");
+				} else {
+					add_data.put(FILE.show_pic, add_data.get(FILE.url));
+				}
+				add_data.put(FILE.addtime, System.currentTimeMillis());
+				add_data.put(FILE.filesize, file.length());
+				new MU(FILE._table_name).data(add_data).add();
+
 				this.assign("error", 0);
 				this.assign("url", pic_url);
 				this.jsonDisplay();

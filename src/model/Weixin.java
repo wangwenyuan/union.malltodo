@@ -36,6 +36,7 @@ import java.util.Map;
 
 import javax.net.ssl.KeyManagerFactory;
 import javax.net.ssl.SSLContext;
+import javax.servlet.http.HttpServletRequest;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -66,14 +67,14 @@ public class Weixin {
 	public static final String WXPAYSDK_VERSION = "WXPaySDK/3.0.9";
 	public static final String USER_AGENT = WXPAYSDK_VERSION + " (" + System.getProperty("os.arch") + " " + System.getProperty("os.name") + " " + System.getProperty("os.version") + ") Java/" + System.getProperty("java.version") + " HttpClient/" + HttpClient.class.getPackage().getImplementationVersion();
 
-	public static JSONObject wechat_mch_pay(String uid, String withdrawals_id, String apiclient_cert_path) throws SQLException, KeyStoreException, NoSuchAlgorithmException, CertificateException, IOException, UnrecoverableKeyException, KeyManagementException {
+	public static JSONObject wechat_mch_pay(String uid, String withdrawals_id, String apiclient_cert_path, HttpServletRequest request) throws SQLException, KeyStoreException, NoSuchAlgorithmException, CertificateException, IOException, UnrecoverableKeyException, KeyManagementException {
 		JSONObject ret = new JSONObject();
 		// 获取微信基本配置信息
 		Map<String, Object> weixin_info = new MU(WEIXIN._table_name).order(WEIXIN.id + " asc").find();
 		if (weixin_info == null) {
 			ret.put("status", "0");
 			ret.put("info", "尚未配置微信支付参数");
-			ret.put("url", T.U("SystemSet/Weixin/index", "admin.jsp"));
+			ret.put("url", T.U("SystemSet/Weixin/index", "admin.jsp", request));
 			return ret;
 		}
 		String appid = weixin_info.get(WEIXIN.appid).toString().trim();
@@ -84,7 +85,7 @@ public class Weixin {
 		if (appid.equals("") || appsecret.toString().equals("") || mchid.equals("") || wxpay_key.toString().equals("")) {
 			ret.put("status", "0");
 			ret.put("info", "微信支付参数未配置完整");
-			ret.put("url", T.U("SystemSet/Weixin/index", "admin.jsp"));
+			ret.put("url", T.U("SystemSet/Weixin/index", "admin.jsp", request));
 			return ret;
 		}
 		// 获取提现订单信息

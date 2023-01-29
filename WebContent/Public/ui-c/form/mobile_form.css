@@ -1,0 +1,63 @@
+.ui-c-form-box{
+	padding: 1rem;
+	background-color: white;
+}
+.ui-c-form-item{
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+	cursor: pointer;
+}
+.ui-c-title{
+	width: auto;
+	box-sizing: border-box;
+	background-color: white;
+	font-size: 0.875rem;
+	padding-bottom: 0.25rem;
+}
+.ui-c-element{
+	width: 100%;
+	box-sizing: border-box;
+	background-color: white;
+}
+
+.ui-c-input {
+	width: 100%;
+	padding-left: 0.625rem;
+	height: 2rem;
+	border-width: 0.0625rem;
+	border-style: solid;
+	background-color: white;
+	border-radius: 0.125rem;
+	display: block;
+	border-color: #e6e6e6;
+	box-sizing: border-box;
+	outline: none;
+}
+
+.ui-c-textarea {
+	width: 100%;
+	padding-left: 0.625rem;
+	height: 7.5rem;
+	border-width: 0.0625rem;
+	border-style: solid;
+	background-color: white;
+	border-radius: 0.125rem;
+	display: block;
+	border-color: #e6e6e6;
+	box-sizing: border-box;
+	outline: none;
+}
+
+.input_textarea{
+	width: 100%;
+	padding-left: 0.625rem;
+	height: 7.5rem;
+	border-width: 0.0625rem;
+	border-style: solid;
+	background-color: white;
+	border-radius: 0.125rem;
+	display: block;
+	border-color: #e6e6e6;
+	box-sizing: border-box;
+	outline: none;
+}

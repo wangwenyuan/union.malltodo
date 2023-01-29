@@ -1,3 +1,9 @@
+/*
+ * UI-C
+ * Copyright (c) 2022 http://ui-c.com All rights reserved.
+ * Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
+ * Author: wangwenyuan <827287829@qq.com>
+ */
 ui_c.build_select_dom = function() {
 	function build(obj) {
 		var html = "<div class=\"ui-c-select-arrow\" onclick=\"ui_c.on_select_click()\">▼</div>";
