@@ -30,7 +30,7 @@ import common.database.RENOVATION;
 public class IndexController extends CommonController {
 	public void indexPage() throws SQLException, UnsupportedEncodingException {
 		Map<String, W> where = new HashMap<String, W>();
-		where.put(RENOVATION.type, new W("eq", "Index/Index/index"));
+		where.put(RENOVATION.type, new W("eq", "Union/Index/index"));
 		where.put(RENOVATION.is_default, new W("eq", 1));
 		where.put(RENOVATION.is_del, new W("eq", 0));
 		Map<String, Object> map = new MU(RENOVATION._table_name).where(where).find();
@@ -44,7 +44,7 @@ public class IndexController extends CommonController {
 
 	public void customPage() throws SQLException, UnsupportedEncodingException {
 		Map<String, W> where = new HashMap<String, W>();
-		where.put(RENOVATION.type, new W("eq", "Index/Index/custom"));
+		where.put(RENOVATION.type, new W("eq", "Union/Index/custom"));
 		where.put(RENOVATION.id, new W("eq", I(RENOVATION.id)));
 		where.put(RENOVATION.is_del, new W("eq", 0));
 		Map<String, Object> map = new MU(RENOVATION._table_name).where(where).find();
@@ -59,16 +59,16 @@ public class IndexController extends CommonController {
 	public void menuPage() throws SQLException, UnsupportedEncodingException {
 		Http http = new Http();
 		String category_sign = http.get(Common.unionHost + "/Public/category_sign.txt");
-		String html = T.S("Index/Index/menu" + category_sign);
+		String html = T.S("Union/Index/menu" + category_sign);
 		if (html.equals("")) {
 			Map<String, W> where = new HashMap<String, W>();
-			where.put(RENOVATION.type, new W("eq", "Index/Index/menu"));
+			where.put(RENOVATION.type, new W("eq", "Union/Index/menu"));
 			where.put(RENOVATION.is_default, new W("eq", 1));
 			where.put(RENOVATION.is_del, new W("eq", 0));
 			Map<String, Object> map = new MU(RENOVATION._table_name).where(where).find();
 			if (map != null) {
 				html = MobileWidget.buildPage(map.get(RENOVATION.id).toString(), webRequestParam, request);
-				T.S("Index/Index/menu" + category_sign, html);
+				T.S("Union/Index/menu" + category_sign, html);
 				String json = http.get(Common.unionHost + "/Public/category.json");
 				T.coverFile(servlet.getServletContext().getRealPath("/") + "json/category.json", json);
 				this.htmlDisplay(html);
@@ -82,7 +82,7 @@ public class IndexController extends CommonController {
 
 	public void categoryPage() throws SQLException, UnsupportedEncodingException {
 		Map<String, W> where = new HashMap<String, W>();
-		where.put(RENOVATION.type, new W("eq", "Index/Index/category"));
+		where.put(RENOVATION.type, new W("eq", "Union/Index/category"));
 		where.put(RENOVATION.is_default, new W("eq", 1));
 		where.put(RENOVATION.is_del, new W("eq", 0));
 		Map<String, Object> map = new MU(RENOVATION._table_name).where(where).find();
@@ -97,7 +97,7 @@ public class IndexController extends CommonController {
 
 	public void categoryGoodsListPage() throws SQLException, UnsupportedEncodingException {
 		Map<String, W> where = new HashMap<String, W>();
-		where.put(RENOVATION.type, new W("eq", "Index/Index/category"));
+		where.put(RENOVATION.type, new W("eq", "Union/Index/category"));
 		where.put(RENOVATION.is_default, new W("eq", 1));
 		where.put(RENOVATION.is_del, new W("eq", 0));
 		Map<String, Object> map = new MU(RENOVATION._table_name).where(where).find();
@@ -112,7 +112,7 @@ public class IndexController extends CommonController {
 
 	public void searchPage() throws SQLException, UnsupportedEncodingException {
 		Map<String, W> where = new HashMap<String, W>();
-		where.put(RENOVATION.type, new W("eq", "Index/Index/search"));
+		where.put(RENOVATION.type, new W("eq", "Union/Index/search"));
 		where.put(RENOVATION.is_default, new W("eq", 1));
 		where.put(RENOVATION.is_del, new W("eq", 0));
 		Map<String, Object> map = new MU(RENOVATION._table_name).where(where).find();
@@ -126,7 +126,7 @@ public class IndexController extends CommonController {
 
 	public void searchGoodsListPage() throws SQLException, UnsupportedEncodingException {
 		Map<String, W> where = new HashMap<String, W>();
-		where.put(RENOVATION.type, new W("eq", "Index/Index/search"));
+		where.put(RENOVATION.type, new W("eq", "Union/Index/search"));
 		where.put(RENOVATION.is_default, new W("eq", 1));
 		where.put(RENOVATION.is_del, new W("eq", 0));
 		Map<String, Object> map = new MU(RENOVATION._table_name).where(where).find();
@@ -140,7 +140,7 @@ public class IndexController extends CommonController {
 
 	public void detailPage() throws SQLException, UnsupportedEncodingException {
 		Map<String, W> where = new HashMap<String, W>();
-		where.put(RENOVATION.type, new W("eq", "Index/Index/goodsDetail"));
+		where.put(RENOVATION.type, new W("eq", "Union/Index/goodsDetail"));
 		where.put(RENOVATION.is_default, new W("eq", 1));
 		where.put(RENOVATION.is_del, new W("eq", 0));
 		Map<String, Object> map = new MU(RENOVATION._table_name).where(where).find();

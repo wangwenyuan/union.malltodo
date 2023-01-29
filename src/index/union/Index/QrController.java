@@ -33,9 +33,9 @@ import freemarker.template.TemplateException;
 public class QrController extends Controller {
 	public void indexPage() throws SQLException, IOException, ServletException, TemplateException {
 		if (I("pid").equals("")) {
-			redirect(T.U("Index/Qr/poster", "pid=" + session("uid"), "index.jsp", request));
+			redirect(T.U("Index/Qr/poster", "pid=" + session("uid"), "index.union.jsp", request));
 		} else {
-			redirect(T.U("Index/Qr/poster", "pid=" + I("pid"), "index.jsp", request));
+			redirect(T.U("Index/Qr/poster", "pid=" + I("pid"), "index.union.jsp", request));
 		}
 		return;
 	}
@@ -52,7 +52,7 @@ public class QrController extends Controller {
 			info.put(QR.qrimg_left, 92);
 			info.put(QR.qrimg_top, 250);
 		}
-		info.put("qrcode", T.U("Index/Qr/qrcode", "pid=" + I("pid"), "index.jsp", request));
+		info.put("qrcode", T.U("Index/Qr/qrcode", "pid=" + I("pid"), "index.union.jsp", request));
 		this.assign("info", JSONObject.parse(JSON.toJSONString(info)));
 		this.display();
 	}

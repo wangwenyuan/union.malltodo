@@ -64,7 +64,7 @@ public class UserController extends CommonController {
 				} else {
 					session("uid", info.get(MEMBER.id).toString());
 					session("username", info.get(MEMBER.username).toString());
-					this.success("登录成功", T.U("Index/Index/index", "index.jsp", request));
+					this.success("登录成功", T.U("Index/Index/index", "index.union.jsp", request));
 					return;
 				}
 			}
@@ -133,7 +133,7 @@ public class UserController extends CommonController {
 			data.put(MEMBER.password, Functions.create_password(password));
 			data.put(MEMBER.username, "tel" + mobile);
 			new MU(MEMBER._table_name).data(data).add();
-			this.success("注册成功", T.U("Index/Index/index", "index.jsp", request));
+			this.success("注册成功", T.U("Index/Index/index", "index.union.jsp", request));
 			return;
 		} else {
 			this.display();
