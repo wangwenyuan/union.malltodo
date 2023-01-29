@@ -48,8 +48,17 @@ MALLTODO 的官方网址是： www.malltodo.com
 ![image](./readme_images/weixin.png)  
 
 
+# 宝塔面板如何安装MALLTODO
 
-# MALLTODO安装
+![image](./readme_images/bt01.png)  
+![image](./readme_images/bt02.png)  
+![image](./readme_images/bt03.png)  
+![image](./readme_images/bt04.png)  
+![image](./readme_images/bt05.png)  
+![image](./readme_images/bt06.png)  
+![image](./readme_images/bt07.png)  
+
+# MALLTODO通用安装方式
 1 安装java环境，对于java程序员来讲配置java环境不是什么难事，对于不太熟悉java环境的朋友可以参考下面这个网页，它很详细地介绍了java开发环境的搭建。（MALLTODO推荐使用jdk1.8和tomcat8，其他版本的目前未经过测试）对于找不到java8安装包的朋友可以到360的软件宝库中下载。 
 Java 开发环境配置：https://www.runoob.com/java/java-environment-setup.html
 
